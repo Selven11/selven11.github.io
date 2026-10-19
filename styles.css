@@ -40,6 +40,7 @@ figcaption{font:.78rem var(--mono);color:#9c9686;margin:.7rem 0 0}
 .row .t h3{margin:0 0 .3rem;font-size:1.02rem;text-transform:none;letter-spacing:0;color:var(--ink)}
 .row .meta{font:.78rem var(--mono);color:var(--mute)}
 .row p{margin:0;font-size:1rem}
+.row .vids{grid-column:3;margin-top:.8rem;font-size:.92rem}
 .row figure{grid-column:3;margin:.6rem 0 0}
 .row figure img{display:block;width:100%;max-width:26rem;height:auto}
 .row .vid iframe{display:block;width:100%;max-width:32rem;aspect-ratio:16/9;border:0;background:#000}
@@ -49,6 +50,6 @@ figcaption{font:.78rem var(--mono);color:#9c9686;margin:.7rem 0 0}
 .row.lead .n{color:var(--acc)}
 #contact{padding-top:clamp(3rem,7vw,6rem);padding-bottom:5rem}
 .big{font-size:clamp(1.8rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.03em;margin:.2rem 0 1.4rem;font-weight:700;word-break:break-word}
-@media(max-width:60rem){.hero,.flag-grid{grid-template-columns:1fr}.flag-side{position:static}.row{grid-template-columns:2.5rem 1fr}.row .t,.row p,.row figure{grid-column:2}.row .n{grid-row:1}}
+@media(max-width:60rem){.hero,.flag-grid{grid-template-columns:1fr}.flag-side{position:static}.row{grid-template-columns:2.5rem 1fr}.row .t,.row p,.row figure,.row .vids{grid-column:2}.row .n{grid-row:1}}
 @media(max-width:40rem){body{font-size:17px}.spec div{grid-template-columns:1fr;gap:.1rem}.top{position:static}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none;transform:none}}
