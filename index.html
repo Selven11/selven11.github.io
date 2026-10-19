@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ram Panchacharam: hardware and instrumentation</title>
+<meta name="description" content="First-year Purdue engineering student. Power measurement on drones, KiCad boards, and a TSA-winning animatronics show.">
+<meta property="og:title" content="Ram Panchacharam: hardware and instrumentation">
+<meta property="og:description" content="Power measurement on drones, KiCad boards, and a TSA-winning animatronics show.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+<a class="name" href="#top" id="top">Ram Panchacharam</a>
+<nav>
+<a href="#aerowatt">AeroWatt</a>
+<a href="#more">Other work</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<h1>I build the thing that measures the thing.</h1>
+<p>First-year engineering student at Purdue, on the electrical side of the ROV team. Last summer I built power instrumentation for a drone research program at Stevens, and the paper is accepted at IEEE MILCOM. Before that, three years of TSA state wins for animatronics shows I wired, laid out and programmed myself.</p>
+</section>
+
+<section class="flagship" id="aerowatt">
+<p class="tag">Flagship &middot; Stevens ML2P &middot; summer 2026</p>
+<h2>AeroWatt: measuring where a drone's battery actually goes</h2>
+
+<p class="lede">Second author of nine on "AeroWatt: A Multi-Rail Forensic Power Measurement Platform for Energy-Aware Edge ML on UAS", accepted at IEEE MILCOM 2026.</p>
+
+<figure class="shot"><img src="img/aerowatt-bench.jpg" width="619" height="490" alt="The Holybro X500 V2 on a desk with the Raspberry Pi and Pixhawk 6C mounted on it" fetchpriority="high"><figcaption>The test airframe on the bench: Holybro X500 V2, Pixhawk 6C, Raspberry Pi with camera.</figcaption></figure>
+
+<div class="figures">
+<dl><dt>1.07%</dt><dd>mean agreement with a lab reference, over about 2,200 time-synced samples</dd></dl>
+<dl><dt>280 &micro;s</dt><dd>one acquisition round across six channels</dd></dl>
+<dl><dt>54</dt><dd>trials, over 48 million data points</dd></dl>
+</div>
+
+<h3>The problem</h3>
+<p>The program wanted to know what a camera, a radio and a CPU each cost in watts on a small drone running machine learning onboard. You cannot answer that from the battery alone. The platform is a Raspberry Pi and a Pixhawk 6C on a Holybro X500 V2, so every rail had to be tapped without changing how the airframe behaves.</p>
+
+<h3>What I built</h3>
+<p>Six series-inserted INA226 current monitors on an I2C bus, read by the same computer that runs the workload. I made pass-through cables that tap the Pixhawk's TELEM1 radio rail and GPS1 rail, then calibrated the monitors against a Monsoon power monitor on the bench. The reader is a persistent C process.</p>
+<p>The protocol matters as much as the board. I used rfkill to cut WiFi and Bluetooth, pinned camera resolution, frame rate, exposure and gain so each is an independent variable, and pinned the CPU governor after a thermal preheat. Planned next: the same protocol on a Raspberry Pi 5 against a Jetson Orin NX.</p>
+
+<h3>What went wrong, and what it taught me</h3>
+<p>Lining the trace windows up sample by sample showed that an averaging artifact had overstated the thermal sensitivity about sixfold. The corrected figure in the paper is 46.2 &plusmn; 4.5 mW/&deg;C for device temperature. Camera frame rate came out at 13.1 mW/fps at fixed resolution. I now check a result against the raw trace before I believe the summary.</p>
+
+<p class="links">Paper: IEEE MILCOM 2026, authors Hernandez, Panchacharam, Meharg, Xiao, Agastra, Wray, Chen, Jakubisin, Wang. Lab repo: <a href="https://github.com/macclab-stevens/ML2P">github.com/macclab-stevens/ML2P</a></p>
+</section>
+
+<section id="more">
+<h2>Other work</h2>
+
+<article class="item wide">
+<h3>Purdue ROV, X-19 test bench power board <span>Sep 2026 to now</span></h3>
+<p>12 V in from an XT60, barrel jack or USB-C PD behind ideal-diode reverse protection, a buck down to 5 V for the Pi, and switched 12 V for thruster ESCs and solenoids. I drew the STM32 and CAN sheet so four INA237 monitors report per-rail voltage and current. I chose the LM61460 because the PKU5511ESI I started with needs 18 to 75 V in and cannot run from 12 V. In KiCad: 154 parts, ERC clean apart from five pin-type errors from the team library. Layout has not started and the lead has not signed off, so it is a design, not a built board.</p>
+</article>
+
+<article class="item">
+<h3>Animatronics light and audio show <span>TSA, high school</span></h3>
+<p>Custom Arduino shield PCBs in KiCad with their own 5 V buck board. Firmware drives 320 WS2812B LEDs per shield through a scene state machine (Intro, Launch, Explosion, Movement, Final) synced to a DFPlayer by pulse count. The KiCad history shows the power board and the Nano mounting being redone. First at TSA States three years running, second at Nationals.</p>
+</article>
+
+<article class="item">
+<h3>Fireworks night light <span>TSA Manufacturing Prototype, 2023</span></h3>
+<p>Third place nationally.</p>
+<img src="img/night-light.jpg" width="1100" height="685" loading="lazy" alt="Two white 3D-printed parts of the night light, a threaded cylinder and a domed cap, on a table">
+<p class="cap">The printed body and cap.</p>
+</article>
+
+<article class="item">
+<h3>Helios turret <span>2023</span></h3>
+<p>Raspberry Pi and Arduino Uno steering servos from OpenCV tracking. It qualified for TSA Nationals and did not place.</p>
+<img src="img/turret.jpg" width="825" height="1100" loading="lazy" alt="A cardboard turret housing two servos with jumper wires, on a desk">
+<p class="cap">Cardboard housing and servos on the bench.</p>
+</article>
+
+<article class="item">
+<h3>Self-balancing two-wheel robot</h3>
+<p>PID on tilt, with the gyroscope used to anticipate a fall instead of only reacting to one.</p>
+</article>
+
+<article class="item">
+<h3>Assistive walking stick</h3>
+<p>Built with a friend from a micro:bit and ultrasonic sensors. Tested next to a staircase, it did not detect the drop. A failed design that told me something real.</p>
+</article>
+
+<article class="item">
+<h3>Quadruped in MuJoCo <span>Jan 2025</span></h3>
+<p>A policy-gradient agent in PyTorch, written from scratch, that teaches the Ant-v5 model to walk.</p>
+</article>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p><a href="mailto:rpanchac@purdue.edu" id="mail">rpanchac@purdue.edu</a> &middot; <a href="https://github.com/Selven11">github.com/Selven11</a></p>
+<p class="small">Purdue University, West Lafayette. Looking for a Summer 2027 hardware internship.</p>
+</section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>
