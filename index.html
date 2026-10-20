@@ -3,116 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ram Panchacharam: hardware and instrumentation</title>
-<meta name="description" content="First-year Purdue engineering student. Power measurement on drones, KiCad boards, and a TSA-winning animatronics show.">
-<meta property="og:title" content="Ram Panchacharam: hardware and instrumentation">
-<meta property="og:description" content="Power measurement on drones, KiCad boards, and a TSA-winning animatronics show.">
-<meta property="og:type" content="website">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Ram Panchacharam</title>
+<meta name="description" content="Ram Panchacharam, first-year engineering at Purdue. Animatronic shows, a county community website, a night light, and other builds people interact with.">
+<meta property="og:title" content="Ram Panchacharam">
+<meta property="og:description" content="Builds people interact with, to entertain them or to help them.">
+<meta property="og:image" content="img/show.jpg">
+<meta name="theme-color" content="#0f0d0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top">
-<a class="name" href="#top" id="top">Ram Panchacharam</a>
-<nav>
-<a href="#aerowatt">AeroWatt</a>
-<a href="#more">Other work</a>
-<a href="#contact">Contact</a>
-</nav>
+<header class="nav">
+<a href="#top" class="mark">Ram Panchacharam</a>
+<nav><a href="#work">Work</a><a href="#lab">Lab</a><a href="#contact">Contact</a></nav>
 </header>
 
-<main>
-<section class="hero wrap">
-<h1>I build the thing that measures the thing.</h1>
-<dl class="spec">
-<div><dt>Now</dt><dd>First-year engineering at Purdue, electrical side of the ROV team.</dd></div>
-<div><dt>Summer 2026</dt><dd>Power instrumentation for drone research at Stevens.</dd></div>
-<div><dt>Paper</dt><dd>IEEE MILCOM 2026, second of nine authors.</dd></div>
-<div><dt>Before</dt><dd>Three years of TSA state wins for animatronics I wired, laid out and programmed.</dd></div>
-<div><dt>Looking for</dt><dd>A Summer 2027 hardware internship.</dd></div>
-</dl>
+<main id="top">
+<section class="hero">
+<div class="hero-copy">
+<p class="kicker">Purdue engineering, first year</p>
+<h1>I build things people <em>play with</em>, and things that <em>help</em> them.</h1>
+<p class="lede">Animatronic shows that light up and react when you wave. A website that tells a county what is on this weekend. A night light, a cane, a rover. The part I care about is the moment someone walks up and uses it.</p>
+<a class="cta" href="#work">See the builds</a>
+</div>
+<figure class="hero-media">
+<video class="loop" autoplay muted loop playsinline preload="metadata" poster="img/show.jpg" aria-label="The animatronics show changing scenes, sped up four times">
+<source src="media/show.mp4" type="video/mp4">
+</video>
+<figcaption><span>01</span> The TSA animatronics show, running through its scenes at 4x.</figcaption>
+</figure>
 </section>
 
-<section class="flagship" id="aerowatt">
-<div class="wrap flag-grid">
-<div class="flag-side">
-<p class="tag">Flagship &middot; Stevens ML2P &middot; summer 2026</p>
-<h2>AeroWatt: measuring where a drone's battery actually goes</h2>
-<p class="lede">Second author of nine on "AeroWatt: A Multi-Rail Forensic Power Measurement Platform for Energy-Aware Edge ML on UAS", accepted at IEEE MILCOM 2026.</p>
-<div class="figures">
-<dl><dt>1.07%</dt><dd>mean agreement with a lab reference, over about 2,200 time-synced samples</dd></dl>
-<dl><dt>280 &micro;s</dt><dd>one acquisition round across six channels</dd></dl>
-<dl><dt>54</dt><dd>trials, over 48 million data points</dd></dl>
+<section class="facts" aria-label="Highlights">
+<div><b>2nd</b><span>TSA Nationals, Animatronics</span></div>
+<div><b>3x</b><span>1st at TSA States, Animatronics</span></div>
+<div><b>3rd</b><span>TSA Nationals 2023, night light</span></div>
+<div><b>1 of 100</b><span>Emerging Innovator of the Year, worldwide</span></div>
+</section>
+
+<div id="work"></div>
+
+<article class="build">
+<header class="build-head">
+<p class="num">01 / Entertain</p>
+<h2>A light and sound show you wave at</h2>
+<p class="tags">KiCad &middot; Arduino &middot; FastLED &middot; DFPlayer</p>
+</header>
+<div class="build-body">
+<figure class="media"><img src="img/led-board.jpg" alt="One of the custom LED shield boards" loading="lazy"></figure>
+<div class="prose">
+<h3>The idea</h3>
+<p>A set of scenes that comes alive when someone walks up: lights, sound and moving parts telling a short story, then resetting for the next person.</p>
+<h3>How it works</h3>
+<p>I designed the Arduino shield boards in KiCad, with their own 5 V buck board, and built at least three physical scenes. Each shield drives 320 WS2812B LEDs. The firmware steps through a scene state machine (Intro, Launch, Explosion, Movement, Final) and keeps a DFPlayer audio module in sync by pulse count.</p>
+<h3>What happened</h3>
+<p>First at TSA States three years running, my last three years of high school, and second at TSA Nationals.</p>
 </div>
 </div>
-<div class="flag-main">
-<figure class="shot"><img src="img/aerowatt-bench.jpg" width="619" height="490" alt="The Holybro X500 V2 on a desk with the Raspberry Pi and Pixhawk 6C mounted on it" fetchpriority="high"><figcaption>The test airframe on the bench: Holybro X500 V2, Pixhawk 6C, Raspberry Pi with camera.</figcaption></figure>
+</article>
 
-<h3>The problem</h3>
-<p>The program wanted to know what a camera, a radio and a CPU each cost in watts on a small drone running machine learning onboard. You cannot answer that from the battery alone. The platform is a Raspberry Pi and a Pixhawk 6C on a Holybro X500 V2, so every rail had to be tapped without changing how the airframe behaves.</p>
-
-<h3>What I built</h3>
-<p>Six series-inserted INA226 current monitors on an I2C bus, read by the same computer that runs the workload. I made pass-through cables that tap the Pixhawk's TELEM1 radio rail and GPS1 rail, then calibrated the monitors against a Monsoon power monitor on the bench. The reader is a persistent C process.</p>
-<p>The protocol matters as much as the board. I used rfkill to cut WiFi and Bluetooth, pinned camera resolution, frame rate, exposure and gain so each is an independent variable, and pinned the CPU governor after a thermal preheat. Planned next: the same protocol on a Raspberry Pi 5 against a Jetson Orin NX.</p>
-
-<h3>What went wrong, and what it taught me</h3>
-<p>Lining the trace windows up sample by sample showed that an averaging artifact had overstated the thermal sensitivity about sixfold. The corrected figure in the paper is 46.2 &plusmn; 4.5 mW/&deg;C for device temperature. Camera frame rate came out at 13.1 mW/fps at fixed resolution. I now check a result against the raw trace before I believe the summary.</p>
-
-<p class="links">Paper: IEEE MILCOM 2026, authors Hernandez, Panchacharam, Meharg, Xiao, Agastra, Wray, Chen, Jakubisin, Wang. Lab repo: <a href="https://github.com/macclab-stevens/ML2P">github.com/macclab-stevens/ML2P</a></p>
+<article class="build">
+<header class="build-head">
+<p class="num">02 / Help</p>
+<h2>Union County Community Hub</h2>
+<p class="tags">Website &middot; TSA</p>
+</header>
+<div class="build-body wide">
+<figure class="media browser"><span class="bar"><i></i><i></i><i></i><u>union-county-community-hub.vercel.app</u></span><img src="img/hub-calendar.jpg" alt="The community hub's events calendar with one day selected" loading="lazy"></figure>
+<div class="prose">
+<p>A website I built for TSA that puts a county in one place: a page for each municipality, a calendar of community events you can click through by day, program listings, a resource library, and an "I'm bored" button for when you want something to do. The photos on the front page are mine.</p>
+<p class="links"><a href="https://union-county-community-hub.vercel.app/">Open the live site</a><a href="https://github.com/Selven11/Union-County-Community-Hub">Code on GitHub</a></p>
 </div>
+</div>
+</article>
+
+<article class="build">
+<header class="build-head">
+<p class="num">03 / Entertain</p>
+<h2>A fireworks rocket night light</h2>
+<p class="tags">TSA Manufacturing Prototype &middot; 3rd at Nationals 2023</p>
+</header>
+<div class="pair">
+<figure><img src="img/night-light-render.jpg" alt="CAD render of the rocket night light" loading="lazy"><figcaption>The CAD model.</figcaption></figure>
+<figure><img src="img/night-light-print.jpg" alt="The printed white rocket body and cap" loading="lazy"><figcaption>The printed body.</figcaption></figure>
+</div>
+<div class="prose cols">
+<p>A Fourth of July rocket that lights up, with swappable covers so it is still a night light the rest of the year. PLA body, magnets holding it together, $3.23 a unit.</p>
+<p>The circuit took four tries. One ATtiny85 pin gave too little voltage, two LEDs per pin too little current, and four batteries in series were dim and died when one LED did. The final version runs one 23A 12 V battery into series groups of 2, 2 and 3 LEDs wired in parallel, so one bad LED no longer kills the light.</p>
+</div>
+</article>
+
+<article class="build">
+<header class="build-head">
+<p class="num">04 / Entertain</p>
+<h2>A Mars rover and a book that turns its own pages</h2>
+<p class="tags">Fusion 360 &middot; Arduino &middot; team builds</p>
+</header>
+<div class="build-body flip">
+<figure class="media"><video class="loop" autoplay muted loop playsinline preload="none" poster="img/rover.jpg" aria-label="The animatronic Mars rover moving on its stage"><source src="media/rover.mp4" type="video/mp4"></video></figure>
+<div class="prose">
+<p>Two animatronics built with a team in Fusion 360 and Arduino. On the rover, my part was the mechanical design that holds the arm mount. The self-flipping book took second in the nation.</p>
+<p>These two, and my mentoring of younger students, are why I was named one of 100 Emerging Innovators of the Year, from more than 25 countries.</p>
+<p class="links"><a href="https://tinyurl.com/2wpxb6vh">Watch the rover</a><a href="https://tinyurl.com/4xp7nvzx">Watch the book</a></p>
+</div>
+</div>
+</article>
+
+<article class="build">
+<header class="build-head">
+<p class="num">05 / Help</p>
+<h2>A walking stick that did not see the stairs</h2>
+<p class="tags">micro:bit &middot; ultrasonic sensors</p>
+</header>
+<div class="prose quote">
+<p>A friend and I built a cane for people with visual impairments that warns when something is in the way. We tested it at a staircase, and it missed the drop. Sensors pointed forward cannot see a step down. That failure taught me more than the parts that worked.</p>
+</div>
+</article>
+
+<section class="more" aria-labelledby="more-h">
+<h2 id="more-h">More builds</h2>
+<div class="grid">
+<figure class="card photo"><img src="img/turret-cardboard.jpg" alt="The Helios turret's cardboard housing and servos" loading="lazy"><figcaption><b>Helios turret</b> A Raspberry Pi and Arduino steering servos from OpenCV tracking. Qualified for TSA Nationals.</figcaption></figure>
+<div class="card"><b>EMF detector</b><p>Arduino and a Hall-effect sensor. First at the Spartan Science and Engineering Fair.</p></div>
+<div class="card"><b>Self-balancing robot</b><p>Two wheels and PID on tilt, using the gyroscope to anticipate a fall instead of only reacting to one.</p></div>
+<div class="card"><b>Walking quadruped</b><p>A policy-gradient agent I wrote from scratch in PyTorch that teaches MuJoCo's Ant model to walk.</p></div>
+<div class="card"><b>Teaching VEX</b><p>More than 200 hours teaching middle schoolers to build and program VEX robots.</p></div>
 </div>
 </section>
 
-<section id="more" class="wrap">
-<h2>Other work</h2>
-<ol class="index">
-<li class="row lead">
-<span class="n">01</span>
-<div class="t"><h3>Purdue ROV, X-19 test bench power board</h3><span class="meta">Sep 2026 to now</span></div>
-<p>12 V in from an XT60, barrel jack or USB-C PD behind ideal-diode reverse protection, a buck down to 5 V for the Pi, and switched 12 V for thruster ESCs and solenoids. I drew the STM32 and CAN sheet so four INA237 monitors report per-rail voltage and current. I chose the LM61460 because the PKU5511ESI I started with needs 18 to 75 V in and cannot run from 12 V. In KiCad: 154 parts, ERC clean apart from five pin-type errors from the team library. Layout has not started and the lead has not signed off, so it is a design, not a built board.</p>
-</li>
-<li class="row">
-<span class="n">02</span>
-<div class="t"><h3>Animatronics light and audio show</h3><span class="meta">TSA, high school</span></div>
-<p>Custom Arduino shield PCBs in KiCad with their own 5 V buck board. Firmware drives 320 WS2812B LEDs per shield through a scene state machine (Intro, Launch, Explosion, Movement, Final) synced to a DFPlayer by pulse count. The KiCad history shows the power board and the Nano mounting being redone. First at TSA States three years running, second at Nationals.</p>
-<p class="vids">Animatronics on video: <a href="https://drive.google.com/file/d/1hgTy63DWNVvLQvSe_eBsYU3arYv0JdIB/view">Mars Rover</a>, <a href="https://drive.google.com/file/d/1Ev3Xon-EOB5i5gBZvuC56n-DQDh77eC-/view">self-flipping book</a>. Built with Fusion 360, Arduino and other mechanics.</p>
-</li>
-<li class="row">
-<span class="n">03</span>
-<div class="t"><h3>Fireworks night light</h3><span class="meta">TSA Manufacturing Prototype, 2023</span></div>
-<p>Third place nationally.</p>
-<figure><img src="img/night-light.jpg" width="1100" height="685" loading="lazy" alt="Two white 3D-printed parts of the night light, a threaded cylinder and a domed cap, on a table"><figcaption>The printed body and cap.</figcaption></figure>
-</li>
-<li class="row">
-<span class="n">04</span>
-<div class="t"><h3>Helios turret</h3><span class="meta">2023</span></div>
-<p>Raspberry Pi and Arduino Uno steering servos from OpenCV tracking. It qualified for TSA Nationals and did not place.</p>
-<figure><img src="img/turret.jpg" width="825" height="1100" loading="lazy" alt="A cardboard turret housing two servos with jumper wires, on a desk"><figcaption>Cardboard housing and servos on the bench.</figcaption></figure>
-</li>
-<li class="row">
-<span class="n">05</span>
-<div class="t"><h3>Self-balancing two-wheel robot</h3></div>
-<p>PID on tilt, with the gyroscope used to anticipate a fall instead of only reacting to one.</p>
-</li>
-<li class="row">
-<span class="n">06</span>
-<div class="t"><h3>Assistive walking stick</h3></div>
-<p>Built with a friend from a micro:bit and ultrasonic sensors. Tested next to a staircase, it did not detect the drop. A failed design that told me something real.</p>
-</li>
-<li class="row">
-<span class="n">07</span>
-<div class="t"><h3>Quadruped in MuJoCo</h3><span class="meta">Jan 2025</span></div>
-<p>A policy-gradient agent in PyTorch, written from scratch, that teaches the Ant-v5 model to walk.</p>
-</li>
-</ol>
+<section class="lab" id="lab" aria-labelledby="lab-h">
+<div class="lab-head">
+<p class="num">Lab</p>
+<h2 id="lab-h">Measuring where the power goes</h2>
+<p>The other half of the work: knowing what each part of a machine costs, so the next thing people use runs longer.</p>
+</div>
+<div class="lab-grid">
+<article>
+<img src="img/aerowatt-bench.jpg" alt="The test drone on the bench with a Raspberry Pi and camera" loading="lazy">
+<h3>AeroWatt, Stevens, summer 2026</h3>
+<p>Six INA226 monitors on the power rails of a research drone, calibrated against a Monsoon power monitor, to find what the camera, radio and CPU each cost. Second of nine authors on the paper, accepted at IEEE MILCOM 2026. An averaging artifact had overstated thermal sensitivity about sixfold, and the paper carries the corrected figure.</p>
+<dl><div><dt>1.07%</dt><dd>mean agreement with the lab reference</dd></div><div><dt>48M+</dt><dd>data points over 54 trials</dd></div></dl>
+<p class="links"><a href="https://github.com/macclab-stevens/ML2P">Lab repo</a></p>
+</article>
+<article>
+<h3>Purdue ROV, test bench power board, now</h3>
+<p>12 V in, a buck to 5 V for the Pi, switched 12 V for thrusters and solenoids, and four INA237 monitors reporting each rail over CAN. I chose an LM61460 because the regulator first considered needs 18 V or more and cannot run from 12 V. 154 parts in KiCad. Layout has not started, so it is a design, not a board yet.</p>
+</article>
+</div>
 </section>
 
-<section id="contact" class="wrap">
-<h2>Contact</h2>
-<p class="big"><a href="mailto:rpanchac@purdue.edu" id="mail">rpanchac@purdue.edu</a></p>
-<p><a href="https://github.com/Selven11">github.com/Selven11</a> &middot; Purdue University, West Lafayette</p>
+<section class="contact" id="contact">
+<p class="kicker">Looking for a summer 2027 internship building things people use</p>
+<a class="mail" href="mailto:rpanchac@purdue.edu">rpanchac@purdue.edu</a>
+<p class="links"><a href="https://github.com/Selven11">GitHub</a><span>Purdue University, West Lafayette</span></p>
 </section>
 </main>
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
