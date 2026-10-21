@@ -3,166 +3,304 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ram Panchacharam</title>
-<meta name="description" content="Ram Panchacharam, first-year engineering at Purdue. Animatronic shows, a county community website, a night light, and other builds people interact with.">
-<meta property="og:title" content="Ram Panchacharam">
-<meta property="og:description" content="Builds people interact with, to entertain them or to help them.">
-<meta property="og:image" content="img/show.jpg">
+<title>Ram Panchacharam, builder</title>
+<meta name="description" content="Ram Panchacharam builds animatronic shows, a county website, a night light, a cane and a rover. ECE at Purdue.">
 <meta name="theme-color" content="#0f0d0b">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-subset.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-italic-subset.woff2">
+<link rel="preload" as="image" href="img/book.jpg" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#work">Skip to work</a>
+
 <header class="nav">
-<a href="#top" class="mark">Ram Panchacharam</a>
-<nav><a href="#work">Work</a><a href="#lab">Lab</a><a href="#contact">Contact</a></nav>
+  <a class="mark" href="#top">Ram Panchacharam</a>
+  <span class="sheet" aria-hidden="true"><span id="sheet-n">01</span> / 05</span>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#lab">Lab</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="pause" id="pause" type="button" aria-pressed="false">Pause motion</button>
 </header>
 
 <main id="top">
-<section class="hero">
-<div class="hero-copy">
-<p class="kicker">Purdue engineering, first year</p>
-<h1>I build things people <em>play with</em>, and things that <em>help</em> them.</h1>
-<p class="lede">Animatronic shows that light up and react when you wave. A website that tells a county what is on this weekend. A night light, a cane, a rover. The part I care about is the moment someone walks up and uses it.</p>
-<a class="cta" href="#work">See the builds</a>
-</div>
-<figure class="hero-media">
-<video class="loop" autoplay muted loop playsinline preload="metadata" poster="img/show.jpg" aria-label="The animatronics show changing scenes, sped up four times">
-<source src="media/show.mp4" type="video/mp4">
-</video>
-<figcaption><span>01</span> The TSA animatronics show, running through its scenes at 4x.</figcaption>
-</figure>
-</section>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-text">
+      <h1 id="hero-h">I build things people <em>play with</em>, and things that <em>help</em>.</h1>
+      <p class="lede">Animatronic shows with lights, sound and moving scenes. A county website. A night light, a cane, a rover.</p>
+    </div>
+    <figure class="hero-media">
+      <div class="hero-box">
+        <video class="hero-video" data-play muted loop playsinline preload="none" poster="img/book.jpg" width="1280" height="720" aria-describedby="cap-hero">
+          <source src="media/book.mp4" type="video/mp4">
+        </video>
+        <svg class="frame" viewBox="0 0 160 90" preserveAspectRatio="none" aria-hidden="true">
+          <rect class="ln" x=".5" y=".5" width="159" height="89" pathLength="1"/>
+          <path class="ln plus" d="M-4 .5h9M.5-4v9" pathLength="1"/>
+          <path class="ln plus" d="M155 .5h9M159.5-4v9" pathLength="1"/>
+          <path class="ln plus" d="M-4 89.5h9M.5 85v9" pathLength="1"/>
+          <path class="ln plus" d="M155 89.5h9M159.5 85v9" pathLength="1"/>
+          <path class="ln plus pm" d="M75.5 .5h9M80-4v9" pathLength="1"/>
+          <path class="ln plus pm" d="M75.5 89.5h9M80 85v9" pathLength="1"/>
+        </svg>
+      </div>
+      <figcaption id="cap-hero">The self-flipping book, 2nd at TSA Nationals 2025. More in <a href="#b04">04</a>.</figcaption>
+    </figure>
+  </section>
 
-<section class="facts" aria-label="Highlights">
-<div><b>2nd</b><span>TSA Nationals, Animatronics</span></div>
-<div><b>3x</b><span>1st at TSA States, Animatronics</span></div>
-<div><b>3rd</b><span>TSA Nationals 2023, night light</span></div>
-<div><b>1 of 100</b><span>Emerging Innovator of the Year, worldwide</span></div>
-</section>
+  <section class="facts" aria-label="Results">
+    <ul>
+      <li><span class="rule"></span>3x 1st at TSA States, Animatronics</li>
+      <li><span class="rule"></span>2nd at TSA Nationals 2025</li>
+      <li><span class="rule"></span>3rd at TSA Nationals 2023</li>
+      <li><span class="rule"></span>2nd of 9 authors, IEEE MILCOM 2026</li>
+    </ul>
+    <p class="lineage">2024 Mars rover, 1st at States. 2025 self-flipping book, 1st at States, 2nd at Nationals. 2026 rotating TV, 1st at States.</p>
+  </section>
 
-<div id="work"></div>
+  <div id="work" tabindex="-1">
+    <section class="build" id="b01" data-sheet="01" aria-labelledby="h01">
+      <div class="build-head">
+        <p class="num">01</p>
+        <h2 id="h01">Light, sound and moving scenes</h2>
+        <div class="body">
+          <p>A custom Arduino shield I laid out in KiCad, with a separate 5 V buck board. I wrote the firmware: FastLED drives the strips and a DFPlayer plays the audio.</p>
+          <p>The show reacts when you wave. In October 2025 I wrote a state machine that steps it through five scenes: Intro, Launch, Explosion, Movement and Final.</p>
+        </div>
+      </div>
+      <div class="pcb-stage" id="pcb-stage">
+        <div class="pcb-view">
+          <p class="pcb-title">scene1, LED shield, 68.58 x 53.34 mm</p>
+          <div class="pcb-box" id="pcb-box">
+            <svg id="pcb" viewBox="-36 -29 72 58" role="img" aria-label="The scene1 LED shield, drawn layer by layer: outline, mounting holes, silkscreen, pads, then every trace on the back copper. Power enters at J8, powerin, and runs to J6, launchmotor, J9, J5 and the J2 header."></svg>
+            <figure class="pcb-photo">
+              <img src="img/led-board.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="An LED board I built, lit up.">
+              <figcaption>An LED board, lit.</figcaption>
+            </figure>
+          </div>
+          <p class="pcb-ghost">F.Cu: empty. Every trace is on the back.</p>
+          <div class="pcb-run" aria-hidden="true">
+            <ol class="states">
+              <li>Intro</li>
+              <li>Launch</li>
+              <li>Explosion</li>
+              <li>Movement</li>
+              <li>Final</li>
+            </ol>
+            <div class="dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<article class="build">
-<header class="build-head">
-<p class="num">01 / Entertain</p>
-<h2>A light and sound show you wave at</h2>
-<p class="tags">KiCad &middot; Arduino &middot; FastLED &middot; DFPlayer</p>
-</header>
-<div class="build-body">
-<figure class="media"><img src="img/led-board.jpg" alt="One of the custom LED shield boards" loading="lazy"></figure>
-<div class="prose">
-<h3>The idea</h3>
-<p>A set of scenes that comes alive when someone walks up: lights, sound and moving parts telling a short story, then resetting for the next person.</p>
-<h3>How it works</h3>
-<p>I designed the Arduino shield boards in KiCad, with their own 5 V buck board, and built at least three physical scenes. Each shield drives 320 WS2812B LEDs. The firmware steps through a scene state machine (Intro, Launch, Explosion, Movement, Final) and keeps a DFPlayer audio module in sync by pulse count.</p>
-<h3>What happened</h3>
-<p>First at TSA States three years running, my last three years of high school, and second at TSA Nationals.</p>
-</div>
-</div>
-</article>
+    <section class="build" id="b02" data-sheet="02" aria-labelledby="h02">
+      <div class="build-head">
+        <p class="num">02</p>
+        <h2 id="h02">A website for a county</h2>
+        <div class="body">
+          <p>Union County Community Hub, a TSA team entry for the 2025-26 prompt: build a website for a community. Five of us wrote it in HTML, CSS and JavaScript. I made 45 of the 132 commits.</p>
+          <p class="links"><a href="https://union-county-community-hub.vercel.app/">Live site</a><a href="https://github.com/Selven11/Union-County-Community-Hub">Code on GitHub</a></p>
+        </div>
+      </div>
+      <a class="browser" href="https://union-county-community-hub.vercel.app/" aria-label="union-county-community-hub.vercel.app, live site">
+        <span class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">union-county-community-hub.vercel.app</span></span>
+        <img src="img/hub-calendar.jpg" width="1385" height="520" loading="lazy" decoding="async" alt="The community calendar page of the Union County Community Hub live site.">
+      </a>
+    </section>
 
-<article class="build">
-<header class="build-head">
-<p class="num">02 / Help</p>
-<h2>Union County Community Hub</h2>
-<p class="tags">Website &middot; TSA</p>
-</header>
-<div class="build-body wide">
-<figure class="media browser"><span class="bar"><i></i><i></i><i></i><u>union-county-community-hub.vercel.app</u></span><img src="img/hub-calendar.jpg" alt="The community hub's events calendar with one day selected" loading="lazy"></figure>
-<div class="prose">
-<p>A website I built for TSA that puts a county in one place: a page for each municipality, a calendar of community events you can click through by day, program listings, a resource library, and an "I'm bored" button for when you want something to do. The photos on the front page are mine.</p>
-<p class="links"><a href="https://union-county-community-hub.vercel.app/">Open the live site</a><a href="https://github.com/Selven11/Union-County-Community-Hub">Code on GitHub</a></p>
-</div>
-</div>
-</article>
+    <section class="build" id="b03" data-sheet="03" aria-labelledby="h03">
+      <div class="build-head">
+        <p class="num">03</p>
+        <h2 id="h03">A rocket that is a night light</h2>
+        <div class="body">
+          <p>A Fourth of July rocket that works as a night light the rest of the year. PLA body, magnets, covers you can swap, $3.23 a unit. We were a team of three. I did the CAD, every print and reprint, the soldering and the electronics. 3rd place, Manufacturing Prototype, TSA Nationals 2023.</p>
+        </div>
+      </div>
+      <figure class="seam" id="seam">
+        <div class="seam-pair">
+          <img class="s-render" src="img/night-light-render.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="A CAD render of the rocket night light.">
+          <img class="s-print" src="img/night-light-print.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="The printed rocket night light.">
+        </div>
+        <figcaption>Render, then print.</figcaption>
+      </figure>
+      <figure class="tries" id="tries">
+        <ol>
+          <li>
+            <svg viewBox="0 0 120 70" aria-hidden="true">
+              <rect class="w" x="6" y="20" width="30" height="30" pathLength="1"/>
+              <path class="w" d="M36 30H70V48M70 58V64H21V50" pathLength="1"/>
+              <circle class="led" cx="70" cy="53" r="5"/>
+            </svg>
+            <p>One ATtiny85 pin: too little voltage.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 120 70" aria-hidden="true">
+              <rect class="w" x="6" y="20" width="30" height="30" pathLength="1"/>
+              <path class="w" d="M36 30H65M75 30H91M101 30H112V64H21V50" pathLength="1"/>
+              <circle class="led" cx="70" cy="30" r="5"/>
+              <circle class="led" cx="96" cy="30" r="5"/>
+            </svg>
+            <p>Two LEDs per pin: too little current.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 120 70" aria-hidden="true">
+              <path class="w" d="M6 18V52M12 25V45M18 18V52M24 25V45M30 18V52M36 25V45M42 18V52M48 25V45" pathLength="1"/>
+              <path class="w" d="M48 35H58V12H65M75 12H81M91 12H97M107 12H112V64H6V52" pathLength="1"/>
+              <circle class="led" cx="70" cy="12" r="5"/>
+              <circle class="led" cx="86" cy="12" r="5"/>
+              <circle class="led" cx="102" cy="12" r="5"/>
+              <path class="dead" d="M80 6l12 12M92 6l-12 12"/>
+            </svg>
+            <p>Four batteries in series: dim, and one dead LED killed it.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 120 70" aria-hidden="true">
+              <path class="w" d="M10 22V48M18 28V42" pathLength="1"/>
+              <path class="w" d="M18 35H30M30 10V62M30 10H112V62H30M30 36H112M10 48V66H112V62" pathLength="1"/>
+              <circle class="led" cx="58" cy="10" r="5"/><circle class="lit" cx="58" cy="10" r="5"/>
+              <circle class="led" cx="84" cy="10" r="5"/><circle class="lit" cx="84" cy="10" r="5"/>
+              <circle class="led" cx="58" cy="36" r="5"/><circle class="lit" cx="58" cy="36" r="5"/>
+              <circle class="led" cx="84" cy="36" r="5"/><circle class="lit" cx="84" cy="36" r="5"/>
+              <circle class="led" cx="50" cy="62" r="5"/><circle class="lit" cx="50" cy="62" r="5"/>
+              <circle class="led" cx="71" cy="62" r="5"/><circle class="lit" cx="71" cy="62" r="5"/>
+              <circle class="led" cx="92" cy="62" r="5"/><circle class="lit" cx="92" cy="62" r="5"/>
+            </svg>
+            <p>One 23A 12 V battery, LEDs in series groups of 2, 2 and 3, the groups in parallel.</p>
+          </li>
+        </ol>
+        <figcaption>Four circuits. The last one kept lighting when an LED died.</figcaption>
+      </figure>
+    </section>
 
-<article class="build">
-<header class="build-head">
-<p class="num">03 / Entertain</p>
-<h2>A fireworks rocket night light</h2>
-<p class="tags">TSA Manufacturing Prototype &middot; 3rd at Nationals 2023</p>
-</header>
-<div class="pair">
-<figure><img src="img/night-light-render.jpg" alt="CAD render of the rocket night light" loading="lazy"><figcaption>The CAD model.</figcaption></figure>
-<figure><img src="img/night-light-print.jpg" alt="The printed white rocket body and cap" loading="lazy"><figcaption>The printed body.</figcaption></figure>
-</div>
-<div class="prose cols">
-<p>A Fourth of July rocket that lights up, with swappable covers so it is still a night light the rest of the year. PLA body, magnets holding it together, $3.23 a unit.</p>
-<p>The circuit took four tries. One ATtiny85 pin gave too little voltage, two LEDs per pin too little current, and four batteries in series were dim and died when one LED did. The final version runs one 23A 12 V battery into series groups of 2, 2 and 3 LEDs wired in parallel, so one bad LED no longer kills the light.</p>
-</div>
-</article>
+    <section class="build" id="b04" data-sheet="04" aria-labelledby="h04">
+      <div class="build-head">
+        <p class="num">04</p>
+        <h2 id="h04">A rover, then a book that turns pages</h2>
+        <div class="body">
+          <p>In 2024 our team of three built a Mars rover diorama in Fusion 360 and Arduino. The rover's design was mine. It took 1st at States. In 2025 I modeled the mechanism for a self-flipping book in Fusion 360, with three scenes: medieval, space and an island. It took 1st at States and 2nd in the nation.</p>
+          <p class="links"><a href="https://tinyurl.com/2wpxb6vh">Watch the rover</a><a href="https://tinyurl.com/4xp7nvzx">Watch the book</a></p>
+        </div>
+      </div>
+      <div class="clips">
+        <figure class="clip">
+          <video data-play muted loop playsinline preload="none" data-poster="img/rover-stars.jpg" width="960" height="1280" aria-describedby="cap-rover">
+            <source src="media/rover-stars.mp4" type="video/mp4">
+          </video>
+          <figcaption id="cap-rover">The rover diorama, 2024.</figcaption>
+        </figure>
+        <figure class="clip">
+          <video data-play muted loop playsinline preload="none" data-poster="img/build-lid.jpg" width="720" height="1280" aria-describedby="cap-lid">
+            <source src="media/build-lid.mp4" type="video/mp4">
+          </video>
+          <figcaption id="cap-lid">Hand-wired LEDs and hot glue under the lid.</figcaption>
+        </figure>
+        <figure class="clip wide">
+          <video data-play muted loop playsinline preload="none" data-poster="img/lid-sim.jpg" width="1280" height="720" aria-describedby="cap-sim">
+            <source src="media/lid-sim.mp4" type="video/mp4">
+          </video>
+          <figcaption id="cap-sim">The lid mechanism, simulated.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-<article class="build">
-<header class="build-head">
-<p class="num">04 / Entertain</p>
-<h2>A Mars rover and a book that turns its own pages</h2>
-<p class="tags">Fusion 360 &middot; Arduino &middot; team builds</p>
-</header>
-<div class="build-body flip">
-<figure class="media"><video class="loop" autoplay muted loop playsinline preload="none" poster="img/rover.jpg" aria-label="The animatronic Mars rover moving on its stage"><source src="media/rover.mp4" type="video/mp4"></video></figure>
-<div class="prose">
-<p>Two animatronics built with a team in Fusion 360 and Arduino. On the rover, my part was the mechanical design that holds the arm mount. The self-flipping book took second in the nation.</p>
-<p>These two, and my mentoring of younger students, are why I was named one of 100 Emerging Innovators of the Year, from more than 25 countries.</p>
-<p class="links"><a href="https://tinyurl.com/2wpxb6vh">Watch the rover</a><a href="https://tinyurl.com/4xp7nvzx">Watch the book</a></p>
-</div>
-</div>
-</article>
+    <section class="build" id="b05" data-sheet="05" aria-labelledby="h05">
+      <div class="build-head">
+        <p class="num">05</p>
+        <h2 id="h05">A walking stick that missed the stairs</h2>
+        <div class="body">
+          <p>A friend and I built a cane for people with low vision, using a micro:bit and ultrasonic sensors. We tested it near a staircase, and it missed the drop. Sensors pointed forward cannot see a step down. That failure taught me more than the parts that worked.</p>
+        </div>
+      </div>
+      <figure class="cane" id="cane">
+        <svg viewBox="0 0 320 150" aria-hidden="true">
+          <path class="g floor" d="M8 118H226" pathLength="1"/>
+          <path class="g stick" d="M52 24L104 118" pathLength="1"/>
+          <rect class="sensor" x="74" y="52" width="10" height="7"/>
+          <path class="g cone" d="M84 56L304 36M84 56L300 104" pathLength="1"/>
+          <rect class="box" x="150" y="66" width="30" height="52"/>
+          <rect class="box-hit" x="150" y="66" width="30" height="52"/>
+          <path class="g stair" d="M226 118V142H312" pathLength="1"/>
+        </svg>
+        <figcaption>It missed the drop at the stairs.</figcaption>
+      </figure>
+    </section>
+  </div>
 
-<article class="build">
-<header class="build-head">
-<p class="num">05 / Help</p>
-<h2>A walking stick that did not see the stairs</h2>
-<p class="tags">micro:bit &middot; ultrasonic sensors</p>
-</header>
-<div class="prose quote">
-<p>A friend and I built a cane for people with visual impairments that warns when something is in the way. We tested it at a staircase, and it missed the drop. Sensors pointed forward cannot see a step down. That failure taught me more than the parts that worked.</p>
-</div>
-</article>
+  <section class="more" aria-labelledby="h-more">
+    <h2 id="h-more">More</h2>
+    <div class="grid">
+      <figure class="card photo">
+        <img src="img/turret-cardboard.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="The Helios turret's cardboard housing and servos.">
+        <figcaption><b>Helios turret</b> A servo turret that tracks objects with OpenCV, on a Raspberry Pi and an Arduino Uno. Qualified for TSA Nationals, 2023.</figcaption>
+      </figure>
+      <figure class="card photo">
+        <video data-play muted loop playsinline preload="none" data-poster="img/rotating-tv.jpg" width="432" height="600" aria-describedby="cap-tv">
+          <source src="media/rotating-tv.mp4" type="video/mp4">
+        </video>
+        <figcaption id="cap-tv"><b>Rotating TV</b> A gear that turns over a row of boxes. 1st at TSA States 2026. At Nationals a part came loose and the gear chewed the boxes instead. A team of three: I was project manager and did the electronics.</figcaption>
+      </figure>
+      <figure class="card photo">
+        <img src="img/pumpkin-sling.jpg" width="1000" height="714" loading="lazy" decoding="async" alt="Students holding cantaloupes beside a wooden catapult frame, faces blurred.">
+        <figcaption><b>Pumpkin sling</b> A trebuchet in 2022: 3rd place, 63 m. A torsion catapult in 2026: I did the math. 3rd place, 22 m, with cantaloupes, March 13, 2026. <small>U.S. Army photo by Todd Mozes.</small></figcaption>
+      </figure>
+      <div class="card"><b>EMF detector</b><p>An Arduino Hall sensor that logs to an SD card and sends readings to an iOS app I wrote in Swift. 1st at the Spartan Science and Engineering Fair, 2023.</p></div>
+      <div class="card"><b>Self-balancing robot</b><p>Two wheels, a gyroscope and a PID loop I tuned to catch the fall.</p></div>
+      <div class="card"><b>Walking quadruped</b><p>A policy-gradient agent I wrote in PyTorch that taught MuJoCo's Ant to walk, 2025.</p></div>
+      <div class="card"><b>Teaching VEX</b><p>Since 2022 I have taught more than 100 middle schoolers to build and program VEX IQ robots, over 200 hours.</p></div>
+    </div>
+  </section>
 
-<section class="more" aria-labelledby="more-h">
-<h2 id="more-h">More builds</h2>
-<div class="grid">
-<figure class="card photo"><img src="img/turret-cardboard.jpg" alt="The Helios turret's cardboard housing and servos" loading="lazy"><figcaption><b>Helios turret</b> A Raspberry Pi and Arduino steering servos from OpenCV tracking. Qualified for TSA Nationals.</figcaption></figure>
-<figure class="card photo"><video class="loop" autoplay muted loop playsinline preload="none" poster="img/rotating-tv.jpg" aria-label="The rotating TV animatronic, a gear turning over boxes"><source src="media/rotating-tv.mp4" type="video/mp4"></video><figcaption><b>Rotating TV</b> The 2026 TSA Animatronics entry. A gear rotates over boxes. First at TSA States.</figcaption></figure>
-<figure class="card photo"><img src="img/pumpkin-sling.jpg" alt="New Providence students holding cantaloupes beside a wooden catapult frame, faces blurred" loading="lazy"><figcaption><b>Pumpkin sling</b> Third place on March 13, 2026, with a torsion catapult that threw cantaloupes 22 m. U.S. Army photo by Todd Mozes.</figcaption></figure>
-<div class="card"><b>EMF detector</b><p>Arduino and a Hall-effect sensor. First at the Spartan Science and Engineering Fair.</p></div>
-<div class="card"><b>Self-balancing robot</b><p>Two wheels and PID on tilt, using the gyroscope to anticipate a fall instead of only reacting to one.</p></div>
-<div class="card"><b>Walking quadruped</b><p>A policy-gradient agent I wrote from scratch in PyTorch that teaches MuJoCo's Ant model to walk.</p></div>
-<div class="card"><b>Teaching VEX</b><p>More than 200 hours teaching middle schoolers to build and program VEX robots.</p></div>
-</div>
-</section>
+  <section class="lab" id="lab" aria-labelledby="h-lab">
+    <div class="lab-head">
+      <p class="num">Lab</p>
+      <h2 id="h-lab">Where the power goes</h2>
+      <p>Measuring where the power goes on boards that fly and boards that swim.</p>
+    </div>
+    <div class="lab-grid">
+      <article>
+        <img src="img/aerowatt-bench.jpg" width="619" height="490" loading="lazy" decoding="async" alt="The test drone on the bench with a Raspberry Pi and camera.">
+        <h3>AeroWatt</h3>
+        <p>Stevens Institute of Technology, summer 2026. Six INA226 current monitors on the flight computer, calibrated against a Monsoon to 1.07% mean agreement. I ran 54 trials, more than 48 million samples, and caught an averaging artifact that overstated thermal sensitivity sixfold. Second of nine authors, accepted at IEEE MILCOM 2026.</p>
+        <p class="links"><a href="https://github.com/macclab-stevens/ML2P">Lab repo on GitHub</a></p>
+      </article>
+      <article>
+        <h3>Purdue ROV</h3>
+        <p>Electrical team, X-19 test bench power board. 12 V in, a buck to 5 V for the Pi, switched 12 V for the thrusters, and four INA237 monitors reporting over CAN. I chose the LM61460 because the first regulator I considered needs 18 V or more. I am designing it now.</p>
+        <figure class="rov" id="rov">
+          <svg viewBox="0 0 300 170" role="img" aria-label="Block diagram: 12 V in feeds an LM61460 buck to 5 V for the Pi, a switched 12 V rail for the thrusters, and four INA237 monitors that report over CAN.">
+            <g class="blk">
+              <rect x="6" y="66" width="54" height="34" rx="2"/><text x="33" y="86.5">12 V in</text>
+              <rect x="110" y="10" width="78" height="34" rx="2"/><text x="149" y="30.5">LM61460 buck</text>
+              <rect x="226" y="10" width="68" height="34" rx="2"/><text x="260" y="30.5">5 V, Pi</text>
+              <rect x="110" y="66" width="78" height="34" rx="2"/><text x="149" y="86.5">Switch</text>
+              <rect x="226" y="66" width="68" height="34" rx="2"/><text x="260" y="86.5">Thrusters</text>
+              <rect x="110" y="124" width="78" height="34" rx="2"/><text x="149" y="144.5">4x INA237</text>
+              <rect x="226" y="124" width="68" height="34" rx="2"/><text x="260" y="144.5">CAN</text>
+            </g>
+            <path class="rail" d="M60 76H84V27H110M188 27H226" pathLength="1"/>
+            <path class="rail" d="M60 83H110M188 83H226" pathLength="1"/>
+            <path class="rail" d="M84 90V141H110M188 141H226" pathLength="1"/>
+          </svg>
+          <figcaption>Block diagram of the board I am designing.</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
 
-<section class="lab" id="lab" aria-labelledby="lab-h">
-<div class="lab-head">
-<p class="num">Lab</p>
-<h2 id="lab-h">Measuring where the power goes</h2>
-<p>The other half of the work: knowing what each part of a machine costs, so the next thing people use runs longer.</p>
-</div>
-<div class="lab-grid">
-<article>
-<img src="img/aerowatt-bench.jpg" alt="The test drone on the bench with a Raspberry Pi and camera" loading="lazy">
-<h3>AeroWatt, Stevens, summer 2026</h3>
-<p>Six INA226 monitors on the power rails of a research drone, calibrated against a Monsoon power monitor, to find what the camera, radio and CPU each cost. Second of nine authors on the paper, accepted at IEEE MILCOM 2026. An averaging artifact had overstated thermal sensitivity about sixfold, and the paper carries the corrected figure.</p>
-<dl><div><dt>1.07%</dt><dd>mean agreement with the lab reference</dd></div><div><dt>48M+</dt><dd>data points over 54 trials</dd></div></dl>
-<p class="links"><a href="https://github.com/macclab-stevens/ML2P">Lab repo</a></p>
-</article>
-<article>
-<h3>Purdue ROV, test bench power board, now</h3>
-<p>12 V in, a buck to 5 V for the Pi, switched 12 V for thrusters and solenoids, and four INA237 monitors reporting each rail over CAN. I chose an LM61460 because the regulator first considered needs 18 V or more and cannot run from 12 V. 154 parts in KiCad. Layout has not started, so it is a design, not a board yet.</p>
-</article>
-</div>
-</section>
-
-<section class="contact" id="contact">
-<p class="kicker">Looking for a summer 2027 internship building things people use</p>
-<a class="mail" href="mailto:rpanchac@purdue.edu">rpanchac@purdue.edu</a>
-<p class="links"><a href="https://github.com/Selven11">GitHub</a><span>Purdue University, West Lafayette</span></p>
-</section>
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Looking for a summer 2027 internship in hardware and embedded systems.</h2>
+    <p>Named one of the Top 100 Emerging Innovators of 2026.</p>
+    <p class="links"><a href="mailto:rpanchac@purdue.edu">rpanchac@purdue.edu</a><a href="https://github.com/Selven11">GitHub</a></p>
+    <p class="where">Purdue, West Lafayette</p>
+  </section>
 </main>
-<script src="main.js" defer></script>
+
+<script defer src="vendor/gsap/gsap.min.js"></script>
+<script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
+<script defer src="vendor/gsap/SplitText.min.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

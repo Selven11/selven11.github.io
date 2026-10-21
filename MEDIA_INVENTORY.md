@@ -1,6 +1,6 @@
 # Media inventory (2026-10-21)
 
-Site files first, then candidates from deep-search/downloads. Minors column is for the source file before blurring.
+Site files first, then candidates from deep-search/media/web-downloads. Minors column is for the source file before blurring.
 
 | file | build | date | source URL | people visible | minors | status | reason |
 |---|---|---|---|---|---|---|---|
