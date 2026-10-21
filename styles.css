@@ -74,7 +74,7 @@ figcaption span{color:var(--acc);margin-right:.6rem}
 .card b{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem;margin-bottom:.4rem}
 .card p{color:var(--mute);margin:0}
 .card.photo{grid-row:span 2;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.card.photo img{flex:1;object-fit:cover;min-height:0}
+.card.photo img,.card.photo video{flex:1;object-fit:cover;min-height:0;width:100%}
 .card.photo figcaption{padding:1.1rem 1.3rem;margin:0;color:var(--mute)}
 .card.photo figcaption b{color:var(--ink)}
 
@@ -112,7 +112,7 @@ figcaption span{color:var(--acc);margin-right:.6rem}
 .build-body.flip .media{order:0;justify-self:start}
 .grid{grid-template-columns:1fr 1fr}
 .card.photo{grid-column:span 2;grid-row:auto}
-.card.photo img{max-height:420px}
+.card.photo img,.card.photo video{max-height:420px}
 }
 @media (max-width:520px){
 .nav nav{gap:1rem}
