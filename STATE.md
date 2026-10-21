@@ -1,6 +1,15 @@
 # Motion rebuild (2026-10-21, chat in ~/life)
 
-Next action (15:20, continued in a new chat): the first build agent died at 15:12 on the session limit before touching index.html/styles.css; research, vendor/, assets/fonts, assets/pcb/scene1.json and work/media cuts are done. Build agent relaunched from work/SPEC.md with Ram's rulings (in corpus commits fb5877b2, 81d6a6af, a0fe2369), no commit. Then 3 critics (motion, perf/a11y, content/facts) -> fix -> playwright verify desktop+375 -> commit+push both remotes.
+Shipped 2026-10-21: commit 2bac2c3, live at https://selven11.github.io/ (Pages run 39666310256, zero console errors). Exploded PCB from the scene1 KiCad file in three.js on desktop (lazy, near #b01) and SVG on mobile and reduced motion; GSAP hero, scene state machine, pulses, lazy video posters.
+
+Next action: cut the longest load task at 375 with 4x CPU throttle (1106 ms, was 1865 ms). Trace with chrome-lab; likely SplitText plus ScrollTrigger setup on first paint.
+
+Open questions for Ram:
+- Is img/led-board.jpg the scene1 shield? If yes, restore the caption "The shield, assembled."
+- Is the build-lid clip the book?
+- Keep the 68.58 x 53.34 mm board size label?
+
+SPEC acceptance beats in work/SPEC.md predate the 125-unit timeline (pulses 72+k*6, photo 114-119, pin +=360% wide, +=240% mobile).
 
 Plan decided:
 - Keep no-build static site on GitHub Pages (BRIEF's Astro/Cloudflare is history: one page, already live). Vendor GSAP+ScrollTrigger+SplitText, Lenis, three.js as local files in vendor/, no CDN.
