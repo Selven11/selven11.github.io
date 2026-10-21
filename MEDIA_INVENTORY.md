@@ -8,10 +8,9 @@ Site files first, then candidates from deep-search/media/web-downloads. Minors c
 | img/hub-calendar.jpg | Calendar hub | before 2026-10-20 | Ram's own | none | no | used | Screenshot |
 | img/night-light-print.jpg, img/night-light-render.jpg | Night light | before 2026-10-20 | Ram's own | not rechecked | not rechecked | used | Pre-existing |
 | img/rover.jpg, media/rover.mp4 | Mars rover | before 2026-10-20 | Ram's own | not rechecked | not rechecked | used | Pre-existing |
-| img/led-board.jpg | LED board | before 2026-10-20 | Ram's own | not rechecked | not rechecked | used | Pre-existing |
 | img/aerowatt-bench.jpg | Lab bench | before 2026-10-20 | Ram's own | not rechecked | not rechecked | used | Pre-existing |
 | img/turret-cardboard.jpg | Helios turret | before 2026-10-20 | Ram's own | not rechecked | not rechecked | used | Pre-existing |
-| media/rotating-tv.mp4, img/rotating-tv.jpg | Rotating TV, TSA Animatronics 2026 | 2026-07-31 | instagram.com/reel/Dbd7yNUulpE | one figure on a set screen and one at the edge, both blurred or cropped out | probable | used | Corpus names the build and the @npstem reel as the working video; hunt-findings matches the reel (medium confidence). 26 s clip, cropped, muted, 0.5 MB |
+| media/rotating-tv.mp4, img/rotating-tv.jpg | Rotating TV, TSA Animatronics 2026 | 2026-07-31 | instagram.com/reel/Dbd7yNUulpE | a figure on the second set screen, left unblurred on Ram's ruling 2026-10-21 (blur hid part of the build) | probable | used | Corpus names the build and the @npstem reel as the working video; hunt-findings matches the reel (medium confidence). 26 s clip, cropped, muted, 0.5 MB |
 | img/pumpkin-sling.jpg | Pumpkin sling 2026 | 2026-03-13 | army.mil article 291110, image c0005d3c, public domain, U.S. Army photo by Todd Mozes | seven students, all faces blurred | yes | used | Article names New Providence HS third, matching the corpus entry. Ram not identified, so the caption does not place him |
 | instagram/DBjvT9US-qS.mp4 | Pumpkin sling | 2024-10-25 | instagram.com/reel/DBjvT9US-qS | person in green cap | likely | rejected | No corpus tie to Ram's build, placement for 2024 open |
 | instagram/Cz7Lpk2gVvK.mp4, .jpg | Pumpkin sling | 2023-11-21 | instagram.com/p/Cz7L4zQA9sW | students | yes | rejected | Minors, 2023 placement open, no tie |

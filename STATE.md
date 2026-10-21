@@ -5,7 +5,7 @@ Shipped 2026-10-21: commit 2bac2c3, live at https://selven11.github.io/ (Pages r
 Next action: cut the longest load task at 375 with 4x CPU throttle (1106 ms, was 1865 ms). Trace with chrome-lab; likely SplitText plus ScrollTrigger setup on first paint.
 
 Open questions for Ram:
-- Is img/led-board.jpg the scene1 shield? If yes, restore the caption "The shield, assembled."
+- Settled 2026-10-21 (Ram): the scene1 shield went in the rotating TV; the LED board photo was unrelated and is removed.
 - Is the build-lid clip the book?
 - Keep the 68.58 x 53.34 mm board size label?
 
