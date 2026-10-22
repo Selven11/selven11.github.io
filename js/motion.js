@@ -131,26 +131,6 @@ export function createMotion(env) {
     };
   }
 
-  function seam(wide) {
-    const fig = $("#seam");
-    const pair = $(".seam-pair", fig);
-    fig.classList.add("wipe");
-    const line = document.createElement("div");
-    line.className = "seam-line";
-    line.setAttribute("aria-hidden", "true");
-    pair.appendChild(line);
-    const tl = gsap.timeline({
-      defaults: { ease: "none" },
-      scrollTrigger: { trigger: fig, start: "top 80%", end: "bottom 20%", scrub: wide ? true : 0.3, invalidateOnRefresh: true }
-    });
-    tl.fromTo(".s-print", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)" }, 0)
-      .fromTo(line, { x: 0 }, { x: () => pair.offsetWidth }, 0);
-    return () => {
-      line.remove();
-      fig.classList.remove("wipe");
-    };
-  }
-
   function tries() {
     const lis = $$("#tries li");
     const tl = gsap.timeline({ scrollTrigger: { trigger: "#tries", start: "top 70%", once: true } });
@@ -189,7 +169,6 @@ export function createMotion(env) {
         if (!motion) return;
         const offs = [hero()];
         facts();
-        offs.push(seam(wide));
         tries();
         cane();
         rov();

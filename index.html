@@ -21,6 +21,7 @@
   <nav aria-label="Main">
     <a href="#work">Work</a>
     <a href="#lab">Lab</a>
+    <a href="#rov-sch">Schematic</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="pause" id="pause" type="button" aria-pressed="false">Pause motion</button>
@@ -29,8 +30,8 @@
 <main id="top">
   <section class="hero" aria-labelledby="hero-h">
     <div class="hero-text">
-      <h1 id="hero-h">I build things people <em>play with</em>, and things that <em>help</em>.</h1>
-      <p class="lede">Animatronic shows with lights, sound and moving scenes. A county website. A night light, a cane, a rover.</p>
+      <h1 id="hero-h">I'm Ram. I design circuit boards and write the code <em>that runs them</em>.</h1>
+      <p class="lede">I'm a first-year ECE student at Purdue. Most of what's here started as a TSA animatronics entry: a box that lights up, plays sound and moves when you wave at it. This semester I'm designing a power board for Purdue ROV.</p>
     </div>
     <figure class="hero-media">
       <div class="hero-box">
@@ -58,7 +59,6 @@
       <li><span class="rule"></span>3rd at TSA Nationals 2023</li>
       <li><span class="rule"></span>2nd of 9 authors, IEEE MILCOM 2026</li>
     </ul>
-    <p class="lineage">2024 Mars rover, 1st at States. 2025 self-flipping book, 1st at States, 2nd at Nationals. 2026 rotating TV, 1st at States.</p>
   </section>
 
   <div id="work" tabindex="-1">
@@ -101,7 +101,7 @@
         <p class="num">02</p>
         <h2 id="h02">A website for a county</h2>
         <div class="body">
-          <p>Union County Community Hub, a TSA team entry for the 2025-26 prompt: build a website for a community. Five of us wrote it in HTML, CSS and JavaScript. I made 45 of the 132 commits.</p>
+          <p>Union County Community Hub, a TSA team entry for the 2025-26 prompt: build a website for a community. Five of us wrote it in HTML, CSS and JavaScript.</p>
           <p class="links"><a href="https://union-county-community-hub.vercel.app/">Live site</a><a href="https://github.com/Selven11/Union-County-Community-Hub">Code on GitHub</a></p>
         </div>
       </div>
@@ -120,11 +120,8 @@
         </div>
       </div>
       <figure class="seam" id="seam">
-        <div class="seam-pair">
-          <img class="s-render" src="img/night-light-render.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="A CAD render of the rocket night light.">
-          <img class="s-print" src="img/night-light-print.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="The printed rocket night light.">
-        </div>
-        <figcaption>Render, then print.</figcaption>
+        <img class="s-render" src="img/night-light-render.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="A CAD render of the rocket night light.">
+        <figcaption>The CAD model.</figcaption>
       </figure>
       <figure class="tries" id="tries">
         <ol>
@@ -184,24 +181,30 @@
           <p class="links"><a href="https://tinyurl.com/2wpxb6vh">Watch the rover</a><a href="https://tinyurl.com/4xp7nvzx">Watch the book</a></p>
         </div>
       </div>
-      <div class="clips">
-        <figure class="clip">
-          <video data-play muted loop playsinline preload="none" data-poster="img/rover-stars.jpg" width="960" height="1280" aria-describedby="cap-rover">
-            <source src="media/rover-stars.mp4" type="video/mp4">
+      <div class="films">
+        <figure class="film wide">
+          <video controls playsinline preload="none" poster="img/book-full.jpg" width="1280" height="720" aria-describedby="cap-bookf">
+            <source src="media/book-full.mp4" type="video/mp4">
           </video>
-          <figcaption id="cap-rover">The rover diorama, 2024.</figcaption>
+          <figcaption id="cap-bookf"><b>The book, start to finish</b> 1:23, sound on. 2nd at TSA Nationals 2025.</figcaption>
         </figure>
-        <figure class="clip">
-          <video data-play muted loop playsinline preload="none" data-poster="img/build-lid.jpg" width="720" height="1280" aria-describedby="cap-lid">
-            <source src="media/build-lid.mp4" type="video/mp4">
+        <figure class="film">
+          <video controls playsinline preload="none" poster="img/rover-full.jpg" width="960" height="1280" aria-describedby="cap-roverf">
+            <source src="media/rover-full.mp4" type="video/mp4">
           </video>
-          <figcaption id="cap-lid">Hand-wired LEDs and hot glue under the lid.</figcaption>
+          <figcaption id="cap-roverf"><b>The rover diorama</b> 0:40. 1st at States, 2024.</figcaption>
         </figure>
-        <figure class="clip wide">
+        <figure class="film">
+          <video controls playsinline preload="none" poster="img/rover-classroom.jpg" width="1280" height="2276" aria-describedby="cap-roverc">
+            <source src="media/rover-classroom-full.mp4" type="video/mp4">
+          </video>
+          <figcaption id="cap-roverc"><b>The rover, floor opening</b> 0:33.</figcaption>
+        </figure>
+        <figure class="film">
           <video data-play muted loop playsinline preload="none" data-poster="img/lid-sim.jpg" width="1280" height="720" aria-describedby="cap-sim">
             <source src="media/lid-sim.mp4" type="video/mp4">
           </video>
-          <figcaption id="cap-sim">The lid mechanism, simulated.</figcaption>
+          <figcaption id="cap-sim"><b>The lid mechanism</b> Simulated before I built it.</figcaption>
         </figure>
       </div>
     </section>
@@ -211,7 +214,7 @@
         <p class="num">05</p>
         <h2 id="h05">A walking stick that missed the stairs</h2>
         <div class="body">
-          <p>A friend and I built a cane for people with low vision, using a micro:bit and ultrasonic sensors. We tested it near a staircase, and it missed the drop. Sensors pointed forward cannot see a step down. That failure taught me more than the parts that worked.</p>
+          <p>A friend and I built a cane for people with low vision, using a micro:bit and ultrasonic sensors. We tested it near a staircase, and it missed the drop. Sensors pointed forward cannot see a step down.</p>
         </div>
       </div>
       <figure class="cane" id="cane">
@@ -228,6 +231,17 @@
       </figure>
     </section>
   </div>
+
+  <section class="broke" aria-labelledby="h-broke">
+    <h2 id="h-broke">What broke, and why</h2>
+    <ol>
+      <li><b>Night light</b><span>Four LEDs in series off four batteries. One LED died and the whole string went dark.</span><span>In series, one open LED opens the loop. The fix was groups of 2, 2 and 3 in parallel, off one 12 V battery.</span></li>
+      <li><b>Walking stick</b><span>Forward-facing ultrasonic sensors missed the drop at a staircase.</span><span>A sensor pointed forward can't see a step down.</span></li>
+      <li><b>Rotating TV</b><span>At Nationals the gear chewed the boxes instead of turning over them.</span><span>A part came loose.</span></li>
+      <li><b>AeroWatt</b><span>Averaged data said the drone was six times more sensitive to heat than it was.</span><span>Averaging hid where the windows didn't line up. Aligning the traces caught it.</span></li>
+      <li><b>ROV board</b><span>The first regulator I picked needs 18 V or more. The bench supplies 12 V.</span><span>So it's an LM61460 buck, which runs from 12 V.</span></li>
+    </ol>
+  </section>
 
   <section class="more" aria-labelledby="h-more">
     <h2 id="h-more">More</h2>
@@ -249,7 +263,7 @@
       <div class="card"><b>EMF detector</b><p>An Arduino Hall sensor that logs to an SD card and sends readings to an iOS app I wrote in Swift. 1st at the Spartan Science and Engineering Fair, 2023.</p></div>
       <div class="card"><b>Self-balancing robot</b><p>Two wheels, a gyroscope and a PID loop I tuned to catch the fall.</p></div>
       <div class="card"><b>Walking quadruped</b><p>A policy-gradient agent I wrote in PyTorch that taught MuJoCo's Ant to walk, 2025.</p></div>
-      <div class="card"><b>Teaching VEX</b><p>Since 2022 I have taught more than 100 middle schoolers to build and program VEX IQ robots, over 200 hours.</p></div>
+      <div class="card"><b>Teaching VEX</b><p>Since 2022 I've taught more than 100 middle schoolers to build and program VEX IQ robots, over 200 hours.</p></div>
     </div>
   </section>
 
@@ -257,7 +271,7 @@
     <div class="lab-head">
       <p class="num">Lab</p>
       <h2 id="h-lab">Where the power goes</h2>
-      <p>Measuring where the power goes on boards that fly and boards that swim.</p>
+      <p>I measure power on a drone's flight computer, and I'm designing a power board for an underwater robot.</p>
     </div>
     <div class="lab-grid">
       <article>
@@ -268,7 +282,7 @@
       </article>
       <article>
         <h3>Purdue ROV</h3>
-        <p>Electrical team, X-19 test bench power board. 12 V in, a buck to 5 V for the Pi, switched 12 V for the thrusters, and four INA237 monitors reporting over CAN. I chose the LM61460 because the first regulator I considered needs 18 V or more. I am designing it now.</p>
+        <p>Electrical team, X-19 test bench power board. 12 V in, a buck to 5 V for the Pi, switched 12 V for the thrusters, and four INA237 monitors reporting over CAN. I chose the LM61460 because the first regulator I considered needs 18 V or more. I'm designing it now.</p>
         <figure class="rov" id="rov">
           <svg viewBox="0 0 300 170" role="img" aria-label="Block diagram: 12 V in feeds an LM61460 buck to 5 V for the Pi, a switched 12 V rail for the thrusters, and four INA237 monitors that report over CAN.">
             <g class="blk">
@@ -290,6 +304,30 @@
     </div>
   </section>
 
+  <section class="sch" id="rov-sch" aria-labelledby="h-sch">
+    <div class="sch-head">
+      <p class="num">Schematic</p>
+      <h2 id="h-sch">The ROV power board, sheet by sheet</h2>
+      <p>Four sheets in KiCad for the X-19 test bench. Pick one and it draws itself. Click the sheet to zoom in.</p>
+    </div>
+    <div class="sch-tabs" role="tablist" aria-label="Schematic sheets">
+      <button role="tab" type="button" aria-selected="true" data-sheet="input"><span>1</span>Power input</button>
+      <button role="tab" type="button" aria-selected="false" data-sheet="conversion"><span>2</span>Conversion</button>
+      <button role="tab" type="button" aria-selected="false" data-sheet="monitoring"><span>3</span>Monitoring</button>
+      <button role="tab" type="button" aria-selected="false" data-sheet="mcu"><span>4</span>MCU and CAN</button>
+    </div>
+    <div class="sch-body">
+      <div class="sch-sheet" id="sch-sheet" role="tabpanel" aria-live="polite"></div>
+      <div class="sch-notes">
+        <p data-for="input">12 V comes in on an XT60, a barrel jack or USB-C. An AP33772S asks the USB-C charger for 12 V. LM74700 ideal diodes pick the live source and block reverse current, an SMBJ15A clamps spikes, and an LM5069 hot-swap controller limits inrush and cuts out over 16.2 V.</p>
+        <p data-for="conversion">An LM61460 buck makes 5 V for the Raspberry Pi. I picked it because the first regulator I looked at needs 18 V or more and can't run from 12 V. A MIC5504 drops 5 V to 3.3 V for the logic.</p>
+        <p data-for="monitoring">Four INA237 monitors measure current and voltage on the rails, and a TMP1075 watches board temperature. Same idea as AeroWatt, on a board that swims.</p>
+        <p data-for="mcu">An STM32 reads the monitors over I2C and reports on the ROV's CAN bus through a TCAN1044 transceiver, so the control station sees every rail.</p>
+        <p class="sch-open"><a id="sch-link" href="assets/sch/input.svg">Open this sheet full size</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact" aria-labelledby="h-contact">
     <h2 id="h-contact">Looking for a summer 2027 internship in hardware and embedded systems.</h2>
     <p>Named one of the Top 100 Emerging Innovators of 2026.</p>
@@ -302,5 +340,6 @@
 <script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script defer src="vendor/gsap/SplitText.min.js"></script>
 <script type="module" src="js/main.js"></script>
+<script type="module" src="js/sch.js"></script>
 </body>
 </html>
