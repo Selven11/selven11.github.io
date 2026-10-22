@@ -77,7 +77,9 @@
           <div class="pcb-box" id="pcb-box">
             <svg id="pcb" viewBox="-36 -29 72 58" role="img" aria-label="The scene1 shield from the rotating TV, drawn layer by layer: outline, mounting holes, silkscreen, pads, then every trace on the back copper. Power enters at J8, powerin, and runs to J6, launchmotor, J9, J5 and the J2 header."></svg>
             <figure class="pcb-photo">
-              <img src="img/rotating-tv.jpg" width="432" height="600" loading="lazy" decoding="async" alt="The rotating TV, the build this shield went into.">
+              <video data-play muted loop playsinline preload="none" data-poster="img/rotating-tv.jpg" width="432" height="600" aria-label="The rotating TV running, the build this shield went into.">
+                <source src="media/rotating-tv.mp4" type="video/mp4">
+              </video>
               <figcaption>Where it went: the rotating TV.</figcaption>
             </figure>
           </div>
@@ -178,7 +180,6 @@
         <h2 id="h04">A rover, then a book that turns pages</h2>
         <div class="body">
           <p>In 2024 our team of three built a Mars rover diorama in Fusion 360 and Arduino. The rover's design was mine. It took 1st at States. In 2025 I modeled the mechanism for a self-flipping book in Fusion 360, with three scenes: medieval, space and an island. It took 1st at States and 2nd in the nation.</p>
-          <p class="links"><a href="https://tinyurl.com/2wpxb6vh">Watch the rover</a><a href="https://tinyurl.com/4xp7nvzx">Watch the book</a></p>
         </div>
       </div>
       <div class="films">
@@ -250,12 +251,7 @@
         <img src="img/turret-cardboard.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="The Helios turret's cardboard housing and servos.">
         <figcaption><b>Helios turret</b> A servo turret that tracks objects with OpenCV, on a Raspberry Pi and an Arduino Uno. Qualified for TSA Nationals, 2023.</figcaption>
       </figure>
-      <figure class="card photo">
-        <video data-play muted loop playsinline preload="none" data-poster="img/rotating-tv.jpg" width="432" height="600" aria-describedby="cap-tv">
-          <source src="media/rotating-tv.mp4" type="video/mp4">
-        </video>
-        <figcaption id="cap-tv"><b>Rotating TV</b> A gear that turns over a row of boxes. 1st at TSA States 2026. At Nationals a part came loose and the gear chewed the boxes instead. A team of three: I was project manager and did the electronics.</figcaption>
-      </figure>
+      <div class="card"><b>Rotating TV</b><p>A gear that turns over a row of boxes. 1st at TSA States 2026. At Nationals a part came loose and the gear chewed the boxes instead. A team of three: I was project manager and did the electronics.</p></div>
       <figure class="card photo">
         <img src="img/pumpkin-sling.jpg" width="1000" height="714" loading="lazy" decoding="async" alt="Students holding cantaloupes beside a wooden catapult frame, faces blurred.">
         <figcaption><b>Pumpkin sling</b> A trebuchet in 2022: 3rd place, 63 m. A torsion catapult in 2026: I did the math. 3rd place, 22 m, with cantaloupes, March 13, 2026. <small>U.S. Army photo by Todd Mozes.</small></figcaption>
@@ -278,7 +274,6 @@
         <img src="img/aerowatt-bench.jpg" width="619" height="490" loading="lazy" decoding="async" alt="The test drone on the bench with a Raspberry Pi and camera.">
         <h3>AeroWatt</h3>
         <p>Stevens Institute of Technology, summer 2026. Six INA226 current monitors on the flight computer, calibrated against a Monsoon to 1.07% mean agreement. I ran 54 trials, more than 48 million samples, and caught an averaging artifact that overstated thermal sensitivity sixfold. Second of nine authors, accepted at IEEE MILCOM 2026.</p>
-        <p class="links"><a href="https://github.com/macclab-stevens/ML2P">Lab repo on GitHub</a></p>
       </article>
       <article>
         <h3>Purdue ROV</h3>
@@ -323,7 +318,6 @@
         <p data-for="conversion">An LM61460 buck makes 5 V for the Raspberry Pi. I picked it because the first regulator I looked at needs 18 V or more and can't run from 12 V. A MIC5504 drops 5 V to 3.3 V for the logic.</p>
         <p data-for="monitoring">Four INA237 monitors measure current and voltage on the rails, and a TMP1075 watches board temperature. Same idea as AeroWatt, on a board that swims.</p>
         <p data-for="mcu">An STM32 reads the monitors over I2C and reports on the ROV's CAN bus through a TCAN1044 transceiver, so the control station sees every rail.</p>
-        <p class="sch-open"><a id="sch-link" href="assets/sch/input.svg">Open this sheet full size</a></p>
       </div>
     </div>
   </section>

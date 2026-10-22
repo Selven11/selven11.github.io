@@ -1,6 +1,5 @@
 const root = document.getElementById("rov-sch");
 const sheet = document.getElementById("sch-sheet");
-const link = document.getElementById("sch-link");
 const tabs = [...root.querySelectorAll("[role=tab]")];
 const notes = [...root.querySelectorAll(".sch-notes [data-for]")];
 const cache = new Map();
@@ -53,7 +52,6 @@ async function show(name) {
   const id = ++seq;
   tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.sheet === name)));
   notes.forEach((n) => n.classList.toggle("on", n.dataset.for === name));
-  link.href = `assets/sch/${name}.svg`;
   const tab = tabs.find((t) => t.dataset.sheet === name);
   sheet.setAttribute("aria-label", `Schematic sheet: ${tab.textContent.replace(/^\d/, "")}`);
   const text = await load(name);
