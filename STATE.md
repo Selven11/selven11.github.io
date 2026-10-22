@@ -1,6 +1,6 @@
 # Site + resume critique pass (2026-10-22, chat in ~/life)
 
-Next action (site SHIPPED 2026-10-22; remaining: resume v3 only) build, in order, then verify at 375 and 1440 (preview config personal-site, port 8766), push origin + pages:
+Next action: Ram decides (1) keep the ROV schematic public before the lead reviews it, (2) swap in resume v3 (~/life/local/applications/resume-v3.clean.pdf). Site 56c22a4 is live and verified. Then: lit night-light photo; resume panel items 3,4,7,8 in work/critique.md not applied yet. Done list: build, in order, then verify at 375 and 1440 (preview config personal-site, port 8766), push origin + pages:
 1. Full videos: ffmpeg (work/media/ffmpeg.exe) 720p CRF 28 with AAC audio, controls, preload=none, poster. Sources: show/book full 83 s = ~/Documents/deep-search/media/animatronic-wooden-box-2025-videos/2025-06-29_idx2335_IMG_0492.MOV (h264); rover full 40 s = ~/Documents/deep-search/media/mars-rover-diorama-2024/IMG_1005.MOV; rover classroom 33 s = IMG_1245.MOV. Rotating TV: only the 26 s reel exists (media/rotating-tv.mp4); add audio if the reel has it. strip_meta each.
 2. Copy: new h1 + lede (plain, what he does), drop 45/132 commits, drop night-light-print.jpg (keep render + four circuits), cut the stairs moral, contractions, one awards listing.
 3. ROV schematic: DONE minified to assets/sch/{input,conversion,monitoring,mcu}.svg (31-89 KB, g.w paths + g.t texts) via work/scripts/minsch.py. Next: section with sheet tabs, GSAP stroke draw on g.w paths, texts fade in.
