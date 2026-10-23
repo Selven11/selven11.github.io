@@ -1,5 +1,5 @@
-import { build } from "./pcb.js?v=20261022d";
-import { createMotion } from "./motion.js?v=20261022d";
+import { build } from "./pcb.js?v=20261022e";
+import { createMotion } from "./motion.js?v=20261022e";
 
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 const pauseBtn = document.getElementById("pause");
@@ -96,7 +96,7 @@ async function init() {
   function load() {
     if (loading || three || broken || !want || !gate()) return;
     loading = true;
-    import("./pcb3d.js?v=20261022d").then((m) => {
+    import("./pcb3d.js?v=20261022e").then((m) => {
       loading = false;
       if (!want || !gate()) return;
       three = m.mount(box, data, () => { three = null; broken = true; motion.attach(null); });

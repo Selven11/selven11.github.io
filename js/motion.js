@@ -1,4 +1,4 @@
-import { addMotionParts } from "./pcb.js?v=20261022d";
+import { addMotionParts } from "./pcb.js?v=20261022e";
 
 const ramp = (p, a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
 const $ = (s, r = document) => r.querySelector(s);
@@ -109,6 +109,17 @@ export function createMotion(env) {
       .from("#tries li:nth-child(4) .lit", { opacity: 0, duration: 0.12, ease: "power4.out", stagger: 0.03 }, 3 * 0.4 + 0.8);
   }
 
+  function nlboards() {
+    $$("#nlboards .nlb").forEach((b, i) => {
+      gsap.timeline({ scrollTrigger: { trigger: b, start: "top 75%", once: true } })
+        .from($$(".dim", b), { strokeDashoffset: 1, duration: 0.8, ease: "power1.inOut" }, 0)
+        .from($$(".silk path, .silk circle", b), { strokeDashoffset: 1, duration: 0.6, stagger: { amount: 0.6 } }, 0.4)
+        .from($$(".bot path", b), { strokeDashoffset: 1, duration: 0.5, ease: "none", stagger: { amount: 0.8 } }, 0.9)
+        .from($$(".top path", b), { strokeDashoffset: 1, duration: 0.5, ease: "none", stagger: { amount: 0.8 } }, 1.3)
+        .from($$(".pad circle:not(.hole)", b), { scale: 0, transformOrigin: "50% 50%", transformBox: "fill-box", duration: 0.25, stagger: { amount: 0.4 } }, 1.9);
+    });
+  }
+
   function cane() {
     gsap.timeline({
       defaults: { ease: "none" },
@@ -147,6 +158,7 @@ export function createMotion(env) {
         const offs = [];
         tries();
         cane();
+        nlboards();
         rov();
         return () => offs.forEach((f) => f());
       });

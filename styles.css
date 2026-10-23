@@ -247,3 +247,17 @@ figcaption a{color:var(--acc);display:inline-flex;align-items:center;justify-con
   .callouts span{position:static;transform:none}
   .inhand{max-width:60%}
 }
+
+.nlboards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.2rem,4vw,4rem);max-width:900px;margin:3rem 0}
+.nlboards figcaption{grid-column:1 / -1;color:var(--mute)}
+.nlb-art{background:#14110e;border:1px solid var(--rule);border-radius:8px;padding:clamp(1rem,3vw,2rem)}
+.nlb-art svg{display:block;width:100%;height:auto;max-height:420px}
+.nlb p{margin:.8rem 0 0;color:var(--mute);font-size:.95rem}
+.nlb b{display:block;color:var(--ink)}
+.nlboards .dim{fill:none;stroke:var(--ink);stroke-width:.25;stroke-dasharray:1}
+.nlboards .silk path,.nlboards .silk circle{fill:none;stroke:#a39885;stroke-width:.18;stroke-dasharray:1}
+.nlboards .top path{fill:none;stroke:#d9534a;stroke-linecap:round;stroke-dasharray:1}
+.nlboards .bot path{fill:none;stroke:#4a8fd9;stroke-linecap:round;stroke-dasharray:1;opacity:.85}
+.nlboards .pad circle{fill:var(--acc)}
+.nlboards .pad .hole{fill:#14110e}
+.nlboards .ref text{font:600 1.4px var(--mono);fill:var(--ink);text-anchor:middle;dominant-baseline:central;opacity:.75}
