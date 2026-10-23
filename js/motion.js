@@ -9,39 +9,8 @@ const COND = { motion: "(prefers-reduced-motion: no-preference)", wide: "(min-wi
 export function createMotion(env) {
   let mm = null;
   let pcbOn = false;
-  let heroDone = false;
   let three = null;
   let paint = null;
-
-  function hero() {
-    const h1 = $(".hero h1");
-    let tl = null, raf = 0;
-    const skip = () => { if (tl) tl.progress(1); };
-    const evs = ["wheel", "touchstart", "keydown"];
-    evs.forEach((e) => window.addEventListener(e, skip, { once: true, passive: true }));
-    raf = requestAnimationFrame(() => {
-      raf = requestAnimationFrame(() => {
-        tl = gsap.timeline({ onComplete: () => { heroDone = true; } });
-        if (!heroDone) {
-          const split = SplitText.create(h1, { type: "lines", mask: "lines" });
-          tl.from(split.lines, { yPercent: 100, duration: 0.8, ease: "power3.out", stagger: 0.08 }, 0);
-          tl.from(".frame .ln", { strokeDashoffset: 1, duration: 0.6, ease: "power2.out", stagger: 0.03 }, 0.2);
-          tl.from(".hero-box", { clipPath: "inset(0 0 100% 0)", duration: 0.7, ease: "power2.inOut" }, 0.5);
-        }
-      });
-    });
-    return () => {
-      cancelAnimationFrame(raf);
-      evs.forEach((e) => window.removeEventListener(e, skip));
-    };
-  }
-
-  function facts() {
-    gsap.from(".facts .rule", {
-      scaleX: 0, duration: 0.5, ease: "power2.out", stagger: 0.06,
-      scrollTrigger: { trigger: ".facts", start: "top 85%", once: true }
-    });
-  }
 
   function pcb(wide) {
     const parts = env.parts;
@@ -93,8 +62,7 @@ export function createMotion(env) {
       .to(lifts.bcu, { y: 14, duration: 22, ease: EX }, 50)
       .to(parts.cam, { scale: 0.7, svgOrigin: "0 0", duration: 22, ease: EX }, 50)
       .from(parts.callout, { opacity: 0, duration: 2 }, 72)
-      .from(".states li", { opacity: 0.3, duration: 1, stagger: 6 }, 72)
-      .from(".dots i", { opacity: 0.15, duration: 0.6, stagger: { amount: 28 } }, 73);
+;
 
     extra.pulses.forEach((slot, k) => {
       const s0 = 72 + k * 6;
@@ -109,7 +77,7 @@ export function createMotion(env) {
       .to([lifts.silk, lifts.ghost, lifts.bcu], { y: 0, duration: 8, ease: EX }, 102)
       .to(parts.cam, { scale: 1, svgOrigin: "0 0", duration: 8, ease: EX }, 102)
       .to(extra.ghost, { opacity: 0, duration: 4 }, 102)
-      .fromTo([parts.callout, ".pcb-run", ".pcb-ghost"], { opacity: 1 }, { opacity: 0, duration: 4, immediateRender: false }, 110)
+      .fromTo([parts.callout, ".pcb-ghost"], { opacity: 1 }, { opacity: 0, duration: 4, immediateRender: false }, 110)
       .set({}, {}, 125);
 
     const lazy = new IntersectionObserver((es) => {
@@ -167,8 +135,7 @@ export function createMotion(env) {
       mm.add(COND, (ctx) => {
         const { motion, wide } = ctx.conditions;
         if (!motion) return;
-        const offs = [hero()];
-        facts();
+        const offs = [];
         tries();
         cane();
         rov();

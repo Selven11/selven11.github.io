@@ -17,11 +17,10 @@
 
 <header class="nav">
   <a class="mark" href="#top">Ram Panchacharam</a>
-  <span class="sheet" aria-hidden="true"><span id="sheet-n">01</span> / 05</span>
   <nav aria-label="Main">
     <a href="#work">Work</a>
-    <a href="#lab">Lab</a>
-    <a href="#rov-sch">Schematic</a>
+    <a href="#lab">Research</a>
+    <a href="#rov">ROV board</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="pause" id="pause" type="button" aria-pressed="false">Pause motion</button>
@@ -29,27 +28,14 @@
 
 <main id="top">
   <section class="hero" aria-labelledby="hero-h">
+    <video class="hero-bg" data-play muted loop playsinline autoplay preload="auto" poster="img/book.jpg" aria-hidden="true">
+      <source src="media/book.mp4" type="video/mp4">
+    </video>
     <div class="hero-text">
-      <h1 id="hero-h">I'm Ram. I design circuit boards and write the code <em>that runs them</em>.</h1>
-      <p class="lede">I'm a first-year electrical engineering student at Purdue. Most of what's here started as a TSA animatronics entry: a box that lights up, plays sound and moves when you wave at it. This semester I'm designing a power board for Purdue ROV.</p>
+      <h1 id="hero-h">I build machines that put on a show.</h1>
+      <p class="lede">I'm Ram, a first-year electrical engineering student at Purdue. I design the circuit boards, write the firmware and model the mechanisms. Behind this text is the self-flipping book my team built, 2nd in the nation at TSA in 2025.</p>
+      <p class="hero-links"><a href="#b04">Watch it start to finish</a><a href="#rov">See the board I'm designing now</a></p>
     </div>
-    <figure class="hero-media">
-      <div class="hero-box">
-        <video class="hero-video" data-play muted loop playsinline preload="none" poster="img/book.jpg" width="1280" height="720" aria-describedby="cap-hero">
-          <source src="media/book.mp4" type="video/mp4">
-        </video>
-        <svg class="frame" viewBox="0 0 160 90" preserveAspectRatio="none" aria-hidden="true">
-          <rect class="ln" x=".5" y=".5" width="159" height="89" pathLength="1"/>
-          <path class="ln plus" d="M-4 .5h9M.5-4v9" pathLength="1"/>
-          <path class="ln plus" d="M155 .5h9M159.5-4v9" pathLength="1"/>
-          <path class="ln plus" d="M-4 89.5h9M.5 85v9" pathLength="1"/>
-          <path class="ln plus" d="M155 89.5h9M159.5 85v9" pathLength="1"/>
-          <path class="ln plus pm" d="M75.5 .5h9M80-4v9" pathLength="1"/>
-          <path class="ln plus pm" d="M75.5 89.5h9M80 85v9" pathLength="1"/>
-        </svg>
-      </div>
-      <figcaption id="cap-hero">The self-flipping book, 2nd at TSA Nationals 2025. More in <a href="#b04">04</a>.</figcaption>
-    </figure>
   </section>
 
   <section class="facts" aria-label="Results">
@@ -71,6 +57,21 @@
           <p>The show reacts when you wave. In October 2025 I wrote a state machine that steps it through five scenes: Intro, Launch, Explosion, Movement and Final.</p>
         </div>
       </div>
+      <figure class="render">
+        <img src="img/shield-render.jpg" width="1800" height="1217" loading="lazy" decoding="async" alt="A 3D render of the scene1 shield from its KiCad file: Arduino headers on the edges, three 3-pin motor headers, the power-in connector and the footprint for the 5 V buck board.">
+        <ul class="callouts" aria-label="Connectors on the shield">
+          <li style="--x:51.7%;--y:28%;--h:60px"><span><b>J8</b> Power in</span></li>
+          <li style="--x:63%;--y:37%;--h:44px"><span><b>J7</b> 5 V buck board</span></li>
+          <li style="--x:34%;--y:39%;--h:70px"><span><b>J6</b> Launch motor</span></li>
+          <li style="--x:47%;--y:38.6%;--h:96px"><span><b>J5</b> Background motor</span></li>
+          <li style="--x:45.5%;--y:59%;--h:50px"><span><b>J9</b> Moon motor</span></li>
+        </ul>
+        <figcaption>Rendered from my KiCad file. Every trace runs on the back copper.</figcaption>
+      </figure>
+      <figure class="inhand">
+        <img src="img/shield-back.jpg" width="870" height="1100" loading="lazy" decoding="async" alt="A fabricated green Arduino shield held in a hand, back side, with wide copper traces.">
+        <figcaption>A fabricated shield, back side.</figcaption>
+      </figure>
       <div class="pcb-stage" id="pcb-stage">
         <div class="pcb-view">
           <p class="pcb-title">scene1 shield, rotating TV, 68.58 x 53.34 mm</p>
@@ -84,16 +85,6 @@
             </figure>
           </div>
           <p class="pcb-ghost">F.Cu: empty. Every trace is on the back.</p>
-          <div class="pcb-run" aria-hidden="true">
-            <ol class="states">
-              <li>Intro</li>
-              <li>Launch</li>
-              <li>Explosion</li>
-              <li>Movement</li>
-              <li>Final</li>
-            </ol>
-            <div class="dots"></div>
-          </div>
         </div>
       </div>
     </section>
@@ -109,7 +100,7 @@
       </div>
       <a class="browser" href="https://union-county-community-hub.vercel.app/" aria-label="union-county-community-hub.vercel.app, live site">
         <span class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">union-county-community-hub.vercel.app</span></span>
-        <img src="img/hub-calendar.jpg" width="1385" height="520" loading="lazy" decoding="async" alt="The community calendar page of the Union County Community Hub live site.">
+        <img src="img/hub-home.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="The home page of the Union County Community Hub live site.">
       </a>
     </section>
 
@@ -263,63 +254,67 @@
     </div>
   </section>
 
-  <section class="lab" id="lab" aria-labelledby="h-lab">
-    <div class="lab-head">
-      <p class="num">Lab</p>
-      <h2 id="h-lab">Where the power goes</h2>
-      <p>I measure power on a drone's flight computer, and I'm designing a power board for an underwater robot.</p>
+  <section class="aero" id="lab" aria-labelledby="h-aero">
+    <div class="aero-head">
+      <p class="num">Research, Stevens Institute of Technology, summer 2026</p>
+      <h2 id="h-aero">Measuring a drone's power, one rail at a time</h2>
+      <p>AeroWatt puts a current monitor on every power rail of a drone's flight computer, so you can see what each part costs in watts. I built the test bench, calibrated it against a lab instrument and ran the trials.</p>
     </div>
-    <div class="lab-grid">
-      <article>
-        <img src="img/aerowatt-bench.jpg" width="619" height="490" loading="lazy" decoding="async" alt="The test drone on the bench with a Raspberry Pi and camera.">
-        <h3>AeroWatt</h3>
-        <p>Stevens Institute of Technology, summer 2026. Six INA226 current monitors on the flight computer, calibrated against a Monsoon to 1.07% mean agreement. I ran 54 trials, more than 48 million samples, and caught an averaging artifact that overstated thermal sensitivity sixfold. Second of nine authors, accepted at IEEE MILCOM 2026.</p>
-      </article>
-      <article>
-        <h3>Purdue ROV</h3>
-        <p>Electrical team, X-19 test bench power board. 12 V in, a buck to 5 V for the Pi, switched 12 V for the thrusters, and four INA237 monitors reporting over CAN. I chose the LM61460 because the first regulator I considered needs 18 V or more. I'm designing it now.</p>
-        <figure class="rov" id="rov">
-          <svg viewBox="0 0 300 170" role="img" aria-label="Block diagram: 12 V in feeds an LM61460 buck to 5 V for the Pi, a switched 12 V rail for the thrusters, and four INA237 monitors that report over CAN.">
-            <g class="blk">
-              <rect x="6" y="66" width="54" height="34" rx="2"/><text x="33" y="86.5">12 V in</text>
-              <rect x="110" y="10" width="78" height="34" rx="2"/><text x="149" y="30.5">LM61460 buck</text>
-              <rect x="226" y="10" width="68" height="34" rx="2"/><text x="260" y="30.5">5 V, Pi</text>
-              <rect x="110" y="66" width="78" height="34" rx="2"/><text x="149" y="86.5">Switch</text>
-              <rect x="226" y="66" width="68" height="34" rx="2"/><text x="260" y="86.5">Thrusters</text>
-              <rect x="110" y="124" width="78" height="34" rx="2"/><text x="149" y="144.5">4x INA237</text>
-              <rect x="226" y="124" width="68" height="34" rx="2"/><text x="260" y="144.5">CAN</text>
-            </g>
-            <path class="rail" d="M60 76H84V27H110M188 27H226" pathLength="1"/>
-            <path class="rail" d="M60 83H110M188 83H226" pathLength="1"/>
-            <path class="rail" d="M84 90V141H110M188 141H226" pathLength="1"/>
-          </svg>
-          <figcaption>Block diagram of the board I am designing.</figcaption>
-        </figure>
-      </article>
+    <ul class="stats">
+      <li><b>6</b><span>rails, each with an INA226 current monitor</span></li>
+      <li><b>1.07%</b><span>mean agreement with a Monsoon power monitor</span></li>
+      <li><b>54</b><span>trials, more than 48 million samples</span></li>
+      <li><b>6&times;</b><span>the thermal sensitivity an averaging artifact claimed, until I caught it</span></li>
+    </ul>
+    <div class="aero-photos">
+      <figure class="wide"><img src="img/hexacopter.jpg" width="1400" height="1269" loading="lazy" decoding="async" alt="The test hexacopter on the lab floor, seen from above."><figcaption>The test drone.</figcaption></figure>
+      <figure><img src="img/monsoon-ina-pi.jpg" width="813" height="1200" loading="lazy" decoding="async" alt="Bench setup: a Monsoon power monitor wired through a current sensor to a Raspberry Pi."><figcaption>Calibration: Monsoon, current sensor, Raspberry Pi.</figcaption></figure>
+      <figure><img src="img/aerowatt-bench.jpg" width="619" height="490" loading="lazy" decoding="async" alt="The test drone on the bench with a Raspberry Pi and camera."><figcaption>Flight computer and camera on the bench.</figcaption></figure>
     </div>
+    <p class="aero-foot">Second of nine authors on the paper, accepted at IEEE MILCOM 2026.</p>
   </section>
 
-  <section class="sch" id="rov-sch" aria-labelledby="h-sch">
-    <div class="sch-head">
-      <p class="num">Schematic</p>
-      <h2 id="h-sch">The ROV power board, sheet by sheet</h2>
-      <p>Four sheets in KiCad for the X-19 test bench. Pick one and it draws itself. Click the sheet to zoom in.</p>
+  <section class="rov" id="rov" aria-labelledby="h-rov">
+    <div class="rov-head">
+      <p class="num">Purdue ROV, X-19 test bench</p>
+      <h2 id="h-rov">The power board I'm designing now</h2>
+      <p>The test bench runs the ROV's thrusters, solenoids and Raspberry Pi off 12 V. This board takes power from any of three inputs, protects it, steps it down and reports every rail to the ROV's CAN bus.</p>
     </div>
-    <div class="sch-tabs" role="tablist" aria-label="Schematic sheets">
-      <button role="tab" type="button" aria-selected="true" data-sheet="input"><span>1</span>Power input</button>
-      <button role="tab" type="button" aria-selected="false" data-sheet="conversion"><span>2</span>Conversion</button>
-      <button role="tab" type="button" aria-selected="false" data-sheet="monitoring"><span>3</span>Monitoring</button>
-      <button role="tab" type="button" aria-selected="false" data-sheet="mcu"><span>4</span>MCU and CAN</button>
+    <div class="tree-wrap">
+      <svg class="tree" viewBox="0 0 1000 370" role="img" aria-label="Power tree: XT60, barrel jack or USB-C PD feed three LM74700 ideal diodes, then an LM5069 hot-swap controller with an SMBJ15A TVS, onto a 12 V bus. The bus feeds switched 12 V for thruster ESCs and solenoids, and an LM61460 buck to 5 V for the Raspberry Pi, followed by a MIC5504 LDO to 3.3 V. Four INA237 monitors and a TMP1075 report over I2C to an STM32, which talks to the ROV CAN bus through a TCAN1044.">
+        <g class="sig">
+          <path d="M670 210V250H315V280" pathLength="1"/>
+          <path d="M400 315H450M620 315H700M830 315H850" pathLength="1"/>
+        </g>
+        <g class="rail">
+          <path d="M170 55H200V125H230M170 125H230M170 195H200V125" pathLength="1"/>
+          <path d="M400 125H450M620 125H670M670 40V210M670 45H700M670 125H700M830 125H850M765 155V175M830 205H850" pathLength="1"/>
+        </g>
+        <g class="blk">
+          <rect x="20" y="30" width="150" height="50" rx="6"/><text x="36" y="52">XT60</text><text class="s" x="36" y="69">12 V in</text>
+          <rect x="20" y="100" width="150" height="50" rx="6"/><text x="36" y="122">Barrel jack</text><text class="s" x="36" y="139">12 V in</text>
+          <rect x="20" y="170" width="150" height="50" rx="6"/><text x="36" y="192">USB-C PD</text><text class="s" x="36" y="209">AP33772S</text>
+          <rect x="230" y="85" width="170" height="80" rx="6"/><text x="246" y="118">Ideal-diode OR</text><text class="s" x="246" y="138">3&#215; LM74700</text>
+          <rect x="450" y="85" width="170" height="80" rx="6"/><text x="466" y="118">Hot-swap, TVS</text><text class="s" x="466" y="138">LM5069, SMBJ15A</text>
+          <rect x="700" y="20" width="280" height="50" rx="6"/><text x="716" y="42">Thruster ESCs, solenoids</text><text class="s" x="716" y="59">switched 12 V</text>
+          <rect x="700" y="95" width="130" height="60" rx="6"/><text x="714" y="120">Buck</text><text class="s" x="714" y="139">LM61460, 5 V</text>
+          <rect x="850" y="95" width="130" height="60" rx="6"/><text x="864" y="120">Raspberry Pi</text><text class="s" x="864" y="139">5 V</text>
+          <rect x="700" y="175" width="130" height="60" rx="6"/><text x="714" y="200">LDO</text><text class="s" x="714" y="219">MIC5504, 3.3 V</text>
+          <rect x="850" y="175" width="130" height="60" rx="6"/><text x="864" y="200">Logic</text><text class="s" x="864" y="219">3.3 V</text>
+          <rect x="230" y="280" width="170" height="70" rx="6"/><text x="246" y="309">Rail monitors</text><text class="s" x="246" y="329">4&#215; INA237, TMP1075</text>
+          <rect x="450" y="280" width="170" height="70" rx="6"/><text x="466" y="309">STM32</text><text class="s" x="466" y="329">reads over I2C</text>
+          <rect x="700" y="280" width="130" height="70" rx="6"/><text x="714" y="309">CAN</text><text class="s" x="714" y="329">TCAN1044</text>
+          <rect x="850" y="280" width="130" height="70" rx="6"/><text x="864" y="309">ROV bus</text><text class="s" x="864" y="329">to topside</text>
+          <text class="bus" x="662" y="228">12 V bus</text>
+        </g>
+      </svg>
     </div>
-    <div class="sch-body">
-      <div class="sch-sheet" id="sch-sheet" role="tabpanel" aria-live="polite"></div>
-      <div class="sch-notes">
-        <p data-for="input">12 V comes in on an XT60, a barrel jack or USB-C. An AP33772S asks the USB-C charger for 12 V. LM74700 ideal diodes pick the live source and block reverse current, an SMBJ15A clamps spikes, and an LM5069 hot-swap controller limits inrush and cuts out over 16.2 V.</p>
-        <p data-for="conversion">An LM61460 buck makes 5 V for the Raspberry Pi. I picked it because the first regulator I looked at needs 18 V or more and can't run from 12 V. A MIC5504 drops 5 V to 3.3 V for the logic.</p>
-        <p data-for="monitoring">Four INA237 monitors measure current and voltage on the rails, and a TMP1075 watches board temperature. Same idea as AeroWatt, on a board that swims.</p>
-        <p data-for="mcu">An STM32 reads the monitors over I2C and reports on the ROV's CAN bus through a TCAN1044 transceiver, so the control station sees every rail.</p>
-      </div>
-    </div>
+    <ol class="rov-notes">
+      <li><b>Inputs</b> 12 V from an XT60, a barrel jack or USB-C. The AP33772S asks a USB-C charger for 12 V. Ideal diodes pick the live source and block reverse current.</li>
+      <li><b>Protection</b> The LM5069 limits inrush and cuts out above 16.2 V. The SMBJ15A clamps spikes.</li>
+      <li><b>Conversion</b> An LM61460 makes 5 V for the Pi. The first regulator I looked at needs 18 V or more, so it can't run from 12 V.</li>
+      <li><b>Monitoring</b> Four INA237s and a TMP1075 report to an STM32, which sends every rail to the control station over CAN.</li>
+    </ol>
   </section>
 
   <section class="contact" id="contact" aria-labelledby="h-contact">
@@ -332,8 +327,6 @@
 
 <script defer src="vendor/gsap/gsap.min.js"></script>
 <script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
-<script defer src="vendor/gsap/SplitText.min.js"></script>
 <script type="module" src="js/main.js"></script>
-<script type="module" src="js/sch.js"></script>
 </body>
 </html>

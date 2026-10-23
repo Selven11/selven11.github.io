@@ -52,6 +52,7 @@ document.querySelectorAll("img[loading=lazy]").forEach((i) => {
 
 const sheet = document.getElementById("sheet-n");
 function sheets() {
+  if (!sheet) return;
   document.querySelectorAll("[data-sheet]").forEach((sec) => {
     ScrollTrigger.create({
       trigger: sec, start: "top center", end: "bottom center",
