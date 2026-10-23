@@ -1,3 +1,9 @@
+# Now (2026-10-22 late): round 4 shipped d71e3eb, live and verified (versioned CSS/JS ?v=20261022d, zero console errors)
+
+Next action, needs Ram: (1) rocket CAD export (.stl/.step/.f3d) for a real lit Blender render (script work/render/nightlight/r.py; the stand-in is NOT his geometry, never ship it); (2) confirm img/shield-back.jpg is a scene shield; (3) photos of the built night light and the cane if any exist.
+Still open from the audit: cane drawing should show its final frame when motion is off; pumpkin photo crop; PCB pin length -30%.
+Paper: do NOT post (Ram).
+
 # Round 3 (Ram, 2026-10-22 evening) - IN PROGRESS
 
 Do NOT post the AeroWatt paper (Ram: not for now). Staged copy deleted.
