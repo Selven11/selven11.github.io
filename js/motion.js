@@ -122,11 +122,20 @@ export function createMotion(env) {
   }
 
   function rov() {
-    gsap.from("#rov .rail", {
-      strokeDashoffset: 1, duration: 1.2, ease: "power1.inOut", stagger: 0.2,
-      scrollTrigger: { trigger: "#rov", start: "top 70%", once: true }
-    });
+    const tree = $(".tree");
+    if (!tree) return;
+    const rects = $$(".blk rect", tree);
+    const texts = $$(".blk text", tree);
+    const rails = $$(".rail path", tree);
+    const sigs = $$(".sig path", tree);
+    rects.forEach((r) => { r.setAttribute("pathLength", "1"); r.style.strokeDasharray = "1"; });
+    gsap.timeline({ scrollTrigger: { trigger: tree, start: "top 75%", once: true } })
+      .from(rects, { strokeDashoffset: 1, duration: 0.7, ease: "power1.inOut", stagger: 0.07 }, 0)
+      .from(texts, { opacity: 0, duration: 0.3, stagger: 0.025 }, 0.4)
+      .from(rails, { strokeDashoffset: 1, duration: 1.1, ease: "power1.inOut", stagger: 0.25 }, 0.9)
+      .from(sigs, { opacity: 0, duration: 0.5, stagger: 0.15 }, 1.6);
   }
+
 
   return {
     start() {
