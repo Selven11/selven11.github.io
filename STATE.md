@@ -1,3 +1,15 @@
+# Round 3 (Ram, 2026-10-22 evening) - IN PROGRESS
+
+Do NOT post the AeroWatt paper (Ram: not for now). Staged copy deleted.
+Ram's asks: company-style site (Apple/Framework/Teenage Engineering product pages), not gimmicky AI-feel motion; generate renders/graphics with tools; go beyond scope.
+1. Hero: full-bleed autoplay video (media/book.mp4 show loop) with name + line over it. Cut SplitText reveal, hero frame crosshairs, facts rule scaleX, 01/05 sheet counter.
+2. Remove the dotted state bar under the PCB (.pcb-run states + dots).
+3. Union County image is bad: retake a crisp screenshot of the live site homepage at 1440 (browser), browser-chrome frame.
+4. Renders: KiCad `kicad-cli pcb render` of scene1 shield (work/render/shield-iso.png, shield-top.png). Blender 5.2 installed (night light OBJ in work/3mf). 
+5. Split Lab: AeroWatt own section, ROV own section (not side by side); more photos.
+6. ROV: replace the 4-sheet schematic viewer (confusing) with a clean designed power-tree diagram (12 V in -> protection -> LM61460 5 V -> MIC5504 3.3 V; INA237 x4 + TMP1075 -> STM32 -> TCAN1044 CAN). Wording rule: only "designing", never mention AI.
+Then verify (pane throttles rAF: step gsap.ticker.tick() by hand), push origin + pages.
+
 # Site + resume critique pass (2026-10-22, chat in ~/life)
 
 Next action: Ram decides (1) keep the ROV schematic public before the lead reviews it, (2) swap in resume v3 (~/life/local/applications/resume-v3.clean.pdf). Site 56c22a4 is live and verified. Then: lit night-light photo; resume panel items 3,4,7,8 in work/critique.md not applied yet. Done list: build, in order, then verify at 375 and 1440 (preview config personal-site, port 8766), push origin + pages:
