@@ -57,3 +57,5 @@ Remotes: origin = Selven11/PersonalWebsite, pages = Selven11/selven11.github.io.
 Local preview: `personal-site` config in ~/life/.claude/launch.json (port 8766).
 
 Round 3 progress: img/shield-render.jpg (KiCad 3D, no glow), img/hexacopter.jpg, img/monsoon-ina-pi.jpg, img/shield-back.jpg (green shield in hand from the Stevens folder, likely the scene shield: flag to Ram) cropped. Hub screenshot via headless Edge -> work/render/hub.png (pending). Blender night-light agent -> img/night-light-lit.jpg (pending). Research: callouts on renders, big numerals, full-bleed media; avoid split text, crosshair frames, fade-up, dotted bar, glow.
+
+Round 3 shipped 3143de9 (video hero, KiCad render + callouts, AeroWatt stats + photos, ROV power tree, hub screenshot). Waiting on: Blender night-light agent (img/night-light-lit.jpg -> swap into .seam figure in b03) and the live-site audit agent (apply its top fixes). Paper NOT posted (Ram). Flag to Ram: img/shield-back.jpg came from the Stevens photo folder; confirm it is a scene shield.
