@@ -1,3 +1,5 @@
+# Night light (53619e4): both real boards (Fusion cache .fbrd -> work/scripts/brd2svg.py -> assets/nl) are live. NEXT: export the rocket body from Fusion cloud (desktop app, computer use; Ram authorized "go into my fusion") as STL to work/nl/, then render lit with work/render/nightlight/r.py adapted to the real mesh, swap into #seam.
+
 # Now (2026-10-22 late): round 4 shipped d71e3eb, live and verified (versioned CSS/JS ?v=20261022d, zero console errors)
 
 Next action, needs Ram: (1) rocket CAD export (.stl/.step/.f3d) for a real lit Blender render (script work/render/nightlight/r.py; the stand-in is NOT his geometry, never ship it); (2) confirm img/shield-back.jpg is a scene shield; (3) photos of the built night light and the cane if any exist.
