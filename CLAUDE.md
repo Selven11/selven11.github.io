@@ -14,3 +14,5 @@ every design decision already made, so don't re-derive them.
   one.
 - Check it in a real browser (the `playwright` MCP) before calling anything
   done.
+
+Cache-buster: every CSS/JS URL and module import carries ?v=YYYYMMDDx. Bump all of them on any CSS/JS change: grep -rl "?v=" index.html js | xargs sed -i "s/?v=OLD/?v=NEW/g".

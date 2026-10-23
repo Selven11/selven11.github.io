@@ -1,4 +1,4 @@
-import { addMotionParts } from "./pcb.js";
+import { addMotionParts } from "./pcb.js?v=20261022d";
 
 const ramp = (p, a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
 const $ = (s, r = document) => r.querySelector(s);

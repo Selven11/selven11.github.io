@@ -3,7 +3,7 @@ import {
   LineMaterial, LineSegments2, LineSegmentsGeometry, MathUtils, Mesh, MeshBasicMaterial,
   MeshLambertMaterial, Object3D, Path, PerspectiveCamera, PlaneGeometry, Scene, Shape, Vector2, WebGLRenderer
 } from "../vendor/three/three.pcb.min.js";
-import { parse, route, bboxOf, PULSES } from "./pcb.js";
+import { parse, route, bboxOf, PULSES } from "./pcb.js?v=20261022d";
 
 const MUTE = new Color("#5a5041");
 const AMBER = new Color("#ffb347");

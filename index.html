@@ -10,7 +10,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-subset.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-italic-subset.woff2">
 <link rel="preload" as="image" href="img/book.jpg" fetchpriority="high">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261022d">
 </head>
 <body>
 <a class="skip" href="#work">Skip to work</a>
@@ -57,6 +57,7 @@
           <p>The show reacts when you wave. In October 2025 I wrote a state machine that steps it through five scenes: Intro, Launch, Explosion, Movement and Final.</p>
         </div>
       </div>
+      <div class="board-shots">
       <figure class="render">
         <img src="img/shield-render.jpg" width="1800" height="1217" loading="lazy" decoding="async" alt="A 3D render of the scene1 shield from its KiCad file: Arduino headers on the edges, three 3-pin motor headers, the power-in connector and the footprint for the 5 V buck board.">
         <ul class="callouts" aria-label="Connectors on the shield">
@@ -72,6 +73,7 @@
         <img src="img/shield-back.jpg" width="870" height="1100" loading="lazy" decoding="async" alt="A fabricated green Arduino shield held in a hand, back side, with wide copper traces.">
         <figcaption>A fabricated shield, back side.</figcaption>
       </figure>
+      </div>
       <div class="pcb-stage" id="pcb-stage">
         <div class="pcb-view">
           <p class="pcb-title">scene1 shield, rotating TV, 68.58 x 53.34 mm</p>
@@ -174,6 +176,12 @@
         </div>
       </div>
       <div class="films">
+        <figure class="film">
+          <video controls playsinline preload="none" poster="img/rover-full.jpg" width="960" height="1280" aria-describedby="cap-roverf">
+            <source src="media/rover-full.mp4" type="video/mp4">
+          </video>
+          <figcaption id="cap-roverf"><b>The rover diorama</b> 0:40. 1st at States, 2024.</figcaption>
+        </figure>
         <figure class="film wide">
           <video controls playsinline preload="none" poster="img/book-full.jpg" width="1280" height="720" aria-describedby="cap-bookf">
             <source src="media/book-full.mp4" type="video/mp4">
@@ -181,16 +189,10 @@
           <figcaption id="cap-bookf"><b>The book, start to finish</b> 1:23, sound on. 2nd at TSA Nationals 2025.</figcaption>
         </figure>
         <figure class="film">
-          <video controls playsinline preload="none" poster="img/rover-full.jpg" width="960" height="1280" aria-describedby="cap-roverf">
-            <source src="media/rover-full.mp4" type="video/mp4">
-          </video>
-          <figcaption id="cap-roverf"><b>The rover diorama</b> 0:40. 1st at States, 2024.</figcaption>
-        </figure>
-        <figure class="film">
           <video controls playsinline preload="none" poster="img/rover-classroom.jpg" width="1280" height="2276" aria-describedby="cap-roverc">
             <source src="media/rover-classroom-full.mp4" type="video/mp4">
           </video>
-          <figcaption id="cap-roverc"><b>The rover, floor opening</b> 0:33.</figcaption>
+          <figcaption id="cap-roverc"><b>The rover, floor opening and closing</b> 0:33.</figcaption>
         </figure>
         <figure class="film">
           <video data-play muted loop playsinline preload="none" data-poster="img/lid-sim.jpg" width="1280" height="720" aria-describedby="cap-sim">
@@ -231,7 +233,7 @@
       <li><b>Walking stick</b><span>Forward-facing ultrasonic sensors missed the drop at a staircase.</span><span>A sensor pointed forward can't see a step down.</span></li>
       <li><b>Rotating TV</b><span>At Nationals the gear chewed the boxes instead of turning over them.</span><span>A part came loose.</span></li>
       <li><b>AeroWatt</b><span>Averaged data said the drone was six times more sensitive to heat than it was.</span><span>Averaging hid where the windows didn't line up. Aligning the traces caught it.</span></li>
-      <li><b>ROV board</b><span>The first regulator I picked needs 18 V or more. The bench supplies 12 V.</span><span>So it's an LM61460 buck, which runs from 12 V.</span></li>
+      <li><b>ROV board</b><span>The first regulator I picked needs 18 V or more. The bench supplies 12 V.</span><span>I switched to an LM61460 buck, which runs from 12 V.</span></li>
     </ol>
   </section>
 
@@ -242,7 +244,7 @@
         <img src="img/turret-cardboard.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="The Helios turret's cardboard housing and servos.">
         <figcaption><b>Helios turret</b> A servo turret that tracks objects with OpenCV, on a Raspberry Pi and an Arduino Uno. Qualified for TSA Nationals, 2023.</figcaption>
       </figure>
-      <div class="card"><b>Rotating TV</b><p>A gear that turns over a row of boxes. 1st at TSA States 2026. At Nationals a part came loose and the gear chewed the boxes instead. A team of three: I was project manager and did the electronics.</p></div>
+      
       <figure class="card photo">
         <img src="img/pumpkin-sling.jpg" width="1000" height="714" loading="lazy" decoding="async" alt="Students holding cantaloupes beside a wooden catapult frame, faces blurred.">
         <figcaption><b>Pumpkin sling</b> A trebuchet in 2022: 3rd place, 63 m. A torsion catapult in 2026: I did the math. 3rd place, 22 m, with cantaloupes, March 13, 2026. <small>U.S. Army photo by Todd Mozes.</small></figcaption>
@@ -261,10 +263,10 @@
       <p>AeroWatt puts a current monitor on every power rail of a drone's flight computer, so you can see what each part costs in watts. I built the test bench, calibrated it against a lab instrument and ran the trials.</p>
     </div>
     <ul class="stats">
-      <li><b>6</b><span>rails, each with an INA226 current monitor</span></li>
+      <li><b>6 rails</b><span>each with an INA226 current monitor</span></li>
       <li><b>1.07%</b><span>mean agreement with a Monsoon power monitor</span></li>
       <li><b>54</b><span>trials, more than 48 million samples</span></li>
-      <li><b>6&times;</b><span>the thermal sensitivity an averaging artifact claimed, until I caught it</span></li>
+      <li><b>6&times;</b><span>false thermal sensitivity from an averaging artifact, caught and corrected</span></li>
     </ul>
     <div class="aero-photos">
       <figure class="wide"><img src="img/hexacopter.jpg" width="1400" height="1269" loading="lazy" decoding="async" alt="The test hexacopter on the lab floor, seen from above."><figcaption>The test drone.</figcaption></figure>
@@ -325,8 +327,8 @@
   </section>
 </main>
 
-<script defer src="vendor/gsap/gsap.min.js"></script>
-<script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
-<script type="module" src="js/main.js"></script>
+<script defer src="vendor/gsap/gsap.min.js?v=20261022d"></script>
+<script defer src="vendor/gsap/ScrollTrigger.min.js?v=20261022d"></script>
+<script type="module" src="js/main.js?v=20261022d"></script>
 </body>
 </html>
